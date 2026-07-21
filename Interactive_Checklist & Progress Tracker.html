@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<!--
+  ORIGINAL WORK: MathMadeEasy (@MathMadeEasyBetty)
+  Exam Prep Checklist: 2027 ESSLCE Mathematics Prep
+  Author-verified build. Do not remove this notice.
+  This checklist is provided free for student use. Unauthorized
+  resale, rebranding, or commercial redistribution is not permitted.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MathMadeEasy: Pillar Checklist</title>
+<style>
+  :root {
+    --ink: #1c1c1c;
+    --muted: #6b6b6b;
+    --rule: #d8d8d8;
+    --accent: #004aad;
+    --accent-light: #eaf1fb;
+    --pillar-bg: #fafafa;
+    --done-bg: #f1f7f1;
+    --done-accent: #2e7d32;
+    --warn: #b8860b;
+    --warn-bg: #fff9e8;
+    --gold: #c9a227;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: var(--ink);
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 20px 14px 70px;
+    line-height: 1.5;
+    background: #ffffff;
+    font-size: 15px;
+    position: relative;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: repeating-linear-gradient(
+      -30deg,
+      transparent 0px, transparent 140px,
+      var(--accent) 140px, var(--accent) 141px,
+      transparent 141px, transparent 280px
+    );
+  }
+  .watermark-text {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-evenly;
+    justify-content: space-evenly;
+    overflow: hidden;
+    opacity: 0.045;
+    transform: rotate(-22deg) scale(1.4);
+  }
+  .watermark-text span {
+    font-family: Georgia, serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--accent);
+    white-space: nowrap;
+    margin: 18px 24px;
+  }
+  header {
+    text-align: center;
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 14px;
+    margin-bottom: 18px;
+  }
+  .site-logo {
+    display: block;
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent);
+  }
+  .brand-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--accent);
+    color: #fff;
+    padding: 5px 14px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+  }
+  .brand-badge .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+  header h1 {
+    font-size: 1.15rem;
+    margin: 0 0 4px;
+    line-height: 1.3;
+  }
+  header p {
+    margin: 2px 0;
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+  header p.handle {
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 0.78rem;
+    margin-top: 6px;
+  }
+  .footer-handle {
+    text-align: center;
+    margin: 28px 0 0;
+  }
+  .name-field {
+    margin: 14px 0 4px;
+    text-align: center;
+  }
+  .name-field label {
+    font-size: 0.78rem;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .name-field input {
+    width: 100%;
+    max-width: 320px;
+    padding: 8px 12px;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.92rem;
+    text-align: center;
+    color: var(--ink);
+  }
+  .name-field input:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+  .persistence-note {
+    text-align: center;
+    font-size: 0.74rem;
+    color: var(--muted);
+    margin: 10px auto 0;
+    max-width: 320px;
+    font-style: italic;
+    line-height: 1.4;
+  }
+  .support-wrap {
+    text-align: center;
+    margin: 12px 0 4px;
+  }
+  .support-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--gold);
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .support-btn:hover {
+    opacity: 0.88;
+  }
+  .support-note {
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-top: 5px;
+    font-style: italic;
+  }
+  .support-confirm {
+    font-size: 0.74rem;
+    font-weight: bold;
+    margin-top: 4px;
+    min-height: 1.1em;
+  }
+  .support-link-display {
+    display: none;
+  }
+  .overview {
+    background: var(--accent-light);
+    border-left: 4px solid var(--accent);
+    padding: 12px 14px;
+    margin-bottom: 18px;
+    border-radius: 2px;
+  }
+  .priority-note {
+    background: #fdf8ec;
+    border-left: 4px solid var(--gold);
+    padding: 10px 14px;
+    margin: 0 0 16px;
+    border-radius: 2px;
+    font-size: 0.82rem;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  #overview-text {
+    font-size: 0.9rem;
+  }
+  .overview-bar-track {
+    background: #eee;
+    border-radius: 6px;
+    height: 12px;
+    overflow: hidden;
+    margin-top: 8px;
+  }
+  .overview-bar-fill {
+    background: var(--accent);
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease;
+  }
+  .overview-text {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+  .celebration {
+    display: none;
+    background: linear-gradient(135deg, var(--accent) 0%, #00326e 100%);
+    color: #fff;
+    text-align: center;
+    padding: 16px 14px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    font-size: 0.95rem;
+    font-weight: bold;
+  }
+  .celebration.show {
+    display: block;
+    animation: pop-in 0.4s ease;
+  }
+  .celebration .sub {
+    font-weight: normal;
+    font-size: 0.78rem;
+    opacity: 0.9;
+    margin-top: 4px;
+  }
+  .celebration-support {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,0.25);
+  }
+  .celebration-support p {
+    font-size: 0.78rem;
+    font-weight: normal;
+    opacity: 0.95;
+    line-height: 1.5;
+    margin: 0 0 10px;
+  }
+  .celebration-support-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--gold);
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .celebration-support-btn:hover {
+    opacity: 0.88;
+  }
+  .celebration-support-confirm {
+    font-size: 0.78rem;
+    font-weight: bold;
+    margin-top: 8px;
+    min-height: 1.2em;
+  }
+  @keyframes pop-in {
+    0% { transform: scale(0.9); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  .pillar {
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  .pillar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 12px;
+    background: var(--pillar-bg);
+    cursor: pointer;
+    user-select: none;
+    gap: 8px;
+  }
+  .pillar-header.warn {
+    background: var(--warn-bg);
+  }
+  .pillar-header.complete {
+    background: var(--done-bg);
+  }
+  .pillar-title {
+    font-weight: bold;
+    font-size: 0.92rem;
+    line-height: 1.3;
+  }
+  .pillar-title .num {
+    color: var(--accent);
+    margin-right: 5px;
+  }
+  .warn-tag {
+    color: var(--warn);
+    font-size: 0.72rem;
+    font-weight: bold;
+    margin-left: 6px;
+  }
+  .pillar-progress {
+    font-size: 0.8rem;
+    color: var(--muted);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .pillar-progress.complete {
+    color: var(--done-accent);
+    font-weight: bold;
+  }
+  .pillar-body {
+    padding: 2px 12px 12px;
+    display: none;
+  }
+  .pillar-body.open {
+    display: block;
+  }
+  .item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 9px 0;
+    border-bottom: 1px dashed var(--rule);
+    font-size: 0.9rem;
+  }
+  .item:last-child {
+    border-bottom: none;
+  }
+  .item input[type="checkbox"] {
+    margin-top: 2px;
+    width: 20px;
+    height: 20px;
+    accent-color: var(--accent);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .item label {
+    cursor: pointer;
+  }
+  .item.checked label {
+    color: var(--muted);
+    text-decoration: line-through;
+  }
+  .toggle-arrow {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-left: 6px;
+  }
+  .pillar-videos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 10px 12px 4px;
+    border-bottom: 1px dashed var(--rule);
+    margin-bottom: 4px;
+  }
+  .pillar-videos a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.78rem;
+    font-weight: bold;
+    color: var(--accent);
+    text-decoration: none;
+    background: var(--accent-light);
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  .pillar-videos a:hover {
+    text-decoration: underline;
+  }
+  .pillar-videos-missing {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.76rem;
+    font-style: italic;
+    color: var(--warn);
+    padding: 8px 12px 2px;
+  }
+  .reset-btn {
+    display: block;
+    margin: 24px auto 0;
+    padding: 10px 20px;
+    background: none;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    color: var(--muted);
+    font-family: inherit;
+    font-size: 0.82rem;
+    cursor: pointer;
+  }
+  .reset-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .storage-note {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 10px;
+    font-style: italic;
+  }
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.72rem;
+    margin-top: 34px;
+    border-top: 1px solid var(--rule);
+    padding-top: 12px;
+  }
+
+  /* Scale up for tablet/desktop */
+  @media (min-width: 600px) {
+    body { padding: 32px 20px 80px; font-size: 16px; }
+    header { padding-bottom: 16px; margin-bottom: 24px; }
+    header h1 { font-size: 1.4rem; }
+    header p { font-size: 0.9rem; }
+    .brand-badge { font-size: 0.82rem; padding: 6px 16px; }
+    .overview { padding: 14px 18px; margin-bottom: 26px; }
+    #overview-text { font-size: 1rem; }
+    .overview-text { font-size: 0.88rem; }
+    .celebration { padding: 20px 18px; font-size: 1.05rem; }
+    .pillar { margin-bottom: 14px; }
+    .pillar-header { padding: 12px 16px; }
+    .pillar-title { font-size: 1rem; }
+    .pillar-progress { font-size: 0.85rem; }
+    .pillar-body { padding: 4px 16px 14px; }
+    .item { font-size: 0.94rem; }
+    .item input[type="checkbox"] { width: 16px; height: 16px; }
+  }
+
+  /* ============ PRINT ============ */
+  /* Browsers often strip low-opacity colored elements and position:fixed
+     content by default when printing, to save ink. These rules force the
+     watermark and copyright line to print consistently, while keeping the
+     watermark just as subtle as it is on screen, background-level only,
+     never something a student has to read past. */
+  @media print {
+    .watermark-text {
+      display: flex !important;
+      opacity: 0.07 !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    footer {
+      display: block !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    /* Without this, collapsed pillars would print as empty headers only,
+       since .pillar-body is display:none until a student expands it on
+       screen. Printing needs everything visible regardless of state. */
+    .pillar-body {
+      display: block !important;
+    }
+    .toggle-arrow {
+      display: none !important;
+    }
+    /* Buttons and interactive-only elements aren't useful on paper */
+    .support-btn, .celebration-support-btn, .reset-btn, .name-field {
+      display: none !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="watermark-text" aria-hidden="true">
+  <span>MathMadeEasy</span><span>MathMadeEasy</span><span>MathMadeEasy</span>
+  <span>MathMadeEasy</span><span>MathMadeEasy</span><span>MathMadeEasy</span>
+  <span>MathMadeEasy</span><span>MathMadeEasy</span><span>MathMadeEasy</span>
+  <span>MathMadeEasy</span><span>MathMadeEasy</span><span>MathMadeEasy</span>
+  <span>MathMadeEasy</span><span>MathMadeEasy</span><span>MathMadeEasy</span>
+  <span>MathMadeEasy</span><span>MathMadeEasy</span><span>MathMadeEasy</span>
+</div>
+
+<header>
+  <span class="brand-badge"><span class="dot"></span>MathMadeEasy</span>
+  <h1>Pillar Checklist</h1>
+  <p>Track your coverage across every topic pillar as you study</p>
+</header>
+
+<p class="priority-note">📊 Not sure where to focus first? Check the <strong>Natural vs Social comparison table</strong> to see which pillars overlap most between streams, and which ones need extra attention.</p>
+
+<div class="name-field">
+  <label for="student-name">Personalize your checklist (just for you, not visible to anyone else):</label>
+  <input type="text" id="student-name" placeholder="Enter your name">
+</div>
+
+<div class="overview">
+  <strong id="overview-text">Loading progress…</strong>
+  <div class="overview-bar-track"><div class="overview-bar-fill" id="overview-bar"></div></div>
+  <div class="overview-text" id="overview-sub"></div>
+</div>
+
+<div class="celebration" id="celebration">
+  🎉 All pillars complete!
+  <div class="sub">You've covered every topic. MathMadeEasy is proud of you.</div>
+  <div class="celebration-support">
+    <p>This checklist, and everything on the channel, stays free, always. If it helped you get ready, a small tip helps cover the equipment and tools that go into making it. Totally optional, just genuinely appreciated. 💛</p>
+    <button class="celebration-support-btn" id="celebration-support-btn">☕ Leave a Tip</button>
+    <div class="celebration-support-confirm" id="celebration-support-confirm"></div>
+  </div>
+</div>
+
+<div id="pillars-container"></div>
+
+<button class="reset-btn" id="reset-btn">Reset all progress</button>
+<p class="persistence-note">📱 Your progress saves on this device/browser only.</p>
+
+<div class="support-wrap">
+  <button class="support-btn" id="support-btn">☕ Support MathMadeEasy</button>
+  <div class="support-note">This channel stays free. Support just helps cover the time and tools behind it. Optional, always 🙏</div>
+  <div class="support-confirm" id="support-confirm"></div>
+  <div class="support-link-display" id="support-link-display"></div>
+</div>
+
+<footer>© 2026 MathMadeEasy (@MathMadeEasyBetty). All rights reserved.<br>Unauthorized resale or commercial redistribution is not permitted.</footer>
+
+<script>
+// =====================================================================
+// PILLAR DATA: edit this list freely while still refining the structure.
+// Each pillar: { id, name, warn (optional flag), items: [ ...checklist items ] }
+// =====================================================================
+const PILLARS = [
+  { id: 'p1', name: 'Number Systems', videos: [
+    { label: 'Number Systems', url: 'https://www.youtube.com/playlist?list=PLCqaz5YaSxqJWw0X0UlR2DH-Irc4M6_nR' }
+  ], items: [
+    'Rational vs. irrational classification',
+    'Laws of exponents & radicals',
+    'Standard / scientific notation'
+  ]},
+  { id: 'p2', name: 'Sets & Elements', videos: [
+    { label: 'Sets & Elements', url: 'https://www.youtube.com/playlist?list=PLCqaz5YaSxqKT8BupD-umWj9RhzrHVP7n' }
+  ], items: [
+    'Set operations (union & intersection)',
+    'Complement (absolute & relative)',
+    'Cartesian product A×B'
+  ]},
+  { id: 'p3', name: 'Relations & Functions', videos: [
+    { label: 'Relations & Functions', url: 'https://www.youtube.com/playlist?list=PLCqaz5YaSxqJgrEQozKJ3eLVlyS0p0sAx' }
+  ], items: [
+    'Function operations (+, −, ×, ÷)',
+    'Special functions (power, floor)',
+    'Rational functions (graph, asymptotes)',
+    'Type of functions (one-to-one, onto, one-to-one correspondence)'
+  ]},
+  { id: 'p4', name: 'Coordinate Geometry', videos: [
+    { label: 'Equation of a Line', url: 'https://www.youtube.com/playlist?list=PLHAu8NQ2i2BM' },
+    { label: 'Dividing Line Segments (Distance Formula)', url: 'https://www.youtube.com/watch?v=eHVaDejMgUg' }
+  ], items: [
+    'Coordinate geometry (equation of lines, slopes, intercepts)',
+    'Distance formula & midpoint',
+    'Dividing lines into ratios'
+  ]},
+  { id: 'p5', name: 'Equations', videos: [
+    { label: 'Quadratic Equations', url: 'https://www.youtube.com/playlist?list=PLCqaz5YaSxqJVsWAB5wCS8AIavLCv6qi2' },
+    { label: 'Classifying Systems', url: 'https://youtu.be/vazAUqCc6Ek' }
+  ], items: [
+    'Linear & quadratic equations, root relationships',
+    'Classifying systems (unique / none / infinite solutions)',
+    'Homogeneous vs. non-homogeneous (know the difference)'
+  ]},
+  { id: 'p6', name: 'Inequalities', videos: [
+    { label: 'Inequalities', url: 'https://www.youtube.com/playlist?list=PLYi1Y5Y0sH-g' }
+  ], items: [
+    'Linear inequalities',
+    'Quadratic inequalities',
+    'Rational inequalities'
+  ]},
+  { id: 'p7', name: 'Linear Programming', videos: [
+    { label: 'Linear Programming', url: 'https://www.youtube.com/playlist?list=PLCqaz5YaSxqKYrznKc-aixW0Iz9DERMwQ' }
+  ], items: [
+    'Feasible region, optimization & finding min/max'
+  ]},
+  { id: 'p8', name: 'Absolute Value', videos: [
+    { label: 'Absolute Value', url: 'https://youtu.be/3PVhrfuwQ-c' }
+  ], items: [
+    'Absolute value equations',
+    'Absolute value inequalities'
+  ]},
+  { id: 'p9', name: 'Trigonometry', videos: [
+    { label: 'Trigonometry', url: 'https://www.youtube.com/playlist?list=PLOBxU_8I4bFE' },
+    { label: 'SOHCAHTOA', url: 'https://youtu.be/g3fOcf2-iCg' }
+  ], items: [
+    'Trig ratios (SOH-CAH-TOA)',
+    'Graph of Sine Cosine Tangent',
+    'Special angle values',
+    'Angle of elevation & depression'
+  ]},
+  { id: 'p10', name: 'Exponential & Logarithmic', videos: [
+    { label: 'Exponential & Logarithm', url: 'https://www.youtube.com/playlist?list=PLCqaz5YaSxqL1Ontx2QkwaWIGIx5BD_nm' }
+  ], items: [
+    'Laws of logarithms',
+    'Exponential & logarithmic equations',
+    'Exponential/logarithmic graphs'
+  ]},
+  { id: 'p11', name: 'Vectors', videos: [
+    { label: 'Vectors', url: 'https://www.youtube.com/playlist?list=PLCqaz5YaSxqIk3gVYBK8H-_9SA9KSFvgz' }
+  ], items: [
+    'Vector addition (triangle / parallelogram law)',
+    'Scalar vs. vector quantities'
+  ]},
+  { id: 'p12', name: 'Matrices & Determinants', videos: [
+    { label: 'Matrix & Determinant', url: 'https://www.youtube.com/playlist?list=PLCqaz5YaSxqKWN49Y4CWasn1TRxxBJX5H' }
+  ], items: [
+    'Matrix equality / operations',
+    'Determinants (2×2)',
+    'Determinants (3×3, cofactor expansion)',
+    'Inverse of a matrix'
+  ]},
+  { id: 'p13', name: 'Sequence & Series', videos: [
+    { label: 'Sequence & Series', url: 'https://www.youtube.com/playlist?list=PLCqaz5YaSxqK6qVKHK9ZkFtz2dP4_i5AM' }
+  ], items: [
+    'Arithmetic sequences / series',
+    'Geometric sequences / series',
+    'Infinite series convergence'
+  ]},
+  { id: 'p14', name: 'Statistics', videos: [
+    { label: 'Statistics', url: 'https://www.youtube.com/playlist?list=PLCqaz5YaSxqKLKNBWSpTK0duFWUAz3Roc' }
+  ], items: [
+    'Data types (Qualitative vs Quantitative)',
+    'Sampling techniques',
+    'Grouped frequency distributions',
+    'Mean, median, mode (unimodal/bimodal/multimodal)',
+    'Mean from grouped/frequency data',
+    'Dispersion measures (mean deviation, quartile deviation)'
+  ]},
+  { id: 'p15', name: 'Probability', videos: [
+    { label: 'Probability', url: 'https://www.youtube.com/playlist?list=PLCqaz5YaSxqLysS_w5vnz90YsX2uGPrQj' }
+  ], items: [
+    'Basic probability',
+    'Permutations & combinations',
+    'Binomial theorem'
+  ]},
+  { id: 'p16', name: 'Plane Geometry', videos: [
+    { label: 'More on Circles', url: 'https://www.youtube.com/playlist?list=PLCqaz5YaSxqJpwcPVlmKhM0YY2sI4gezC' },
+    { label: 'Regular Polygon', url: 'https://www.youtube.com/playlist?list=PLCqaz5YaSxqK2sbi4CXFZJJQoOCIhqIoy' },
+    { label: 'Congruency & Similarity', url: 'https://www.youtube.com/playlist?list=PLCqaz5YaSxqJnW_AyL1ZAMOJTajdVTNyn' },
+    { label: 'Area of a Triangle', url: 'https://www.youtube.com/playlist?list=PLCqaz5YaSxqI2o3ANdsUlyj7z4Nk1sLtT' }
+  ], items: [
+    'Polygon angles',
+    'Similar triangles',
+    'Circle theorems',
+    'Area of a triangle'
+  ]},
+  { id: 'p17', name: 'Measurements (Solid Figures)', videos: [
+    { label: 'Solid Figures', url: 'https://www.youtube.com/playlist?list=PLCqaz5YaSxqLqt6PTXifRd-up4TsakSN0' }
+  ], items: [
+    'Surface area',
+    'Volume',
+    'Frustum of a cone'
+  ]},
+  { id: 'p18', name: 'Calculus (Derivative & Integration)', videos: [
+    { label: 'Calculus', url: 'https://www.youtube.com/playlist?list=PLCqaz5YaSxqIueEV355DSLS5WzFGgujAX' }
+  ], items: [
+    'Average rate of change',
+    'Derivative rules (power rule, chain rule, multiplication & quotient)',
+    'Local max / min',
+    'Integration (Area under curve)'
+  ]},
+  { id: 'p19', name: 'Mathematical Applications', videos: [
+    { label: 'Mathematical Applications', url: 'https://www.youtube.com/playlist?list=PLCqaz5YaSxqKmtDnmArVuFxtkeCwJUEFD' }
+  ], items: [
+    'Discount / markup',
+    'Tax calculation',
+    'Interest & loans'
+  ]},
+  { id: 'p20', name: 'Transformation of the Plane', videos: [
+    { label: 'Transformation', url: 'https://www.youtube.com/playlist?list=PLCqaz5YaSxqKCbA4IgqGVuCAdeqyhFzhm' }
+  ], items: [
+    'Translation',
+    'Reflection',
+    'Rotation',
+    'Circle & line transformation problems'
+  ]}
+];
+// STATUS: all 20 pillars have confirmed, entrance-exam-sourced video links as of
+// the latest update. Relations & Functions (p3) uses a Freshman-level playlist as
+// an interim pick, swap in a Grade-9-specific entrance link if one is made later.
+// =====================================================================
+
+const STORAGE_PREFIX = 'pillar-check:';
+let storageAvailable = true;
+let state = {}; // { "p1:0": true, "p1:1": false, ... }
+
+function loadState() {
+  for (const pillar of PILLARS) {
+    for (let i = 0; i < pillar.items.length; i++) {
+      const key = pillar.id + ':' + i;
+      try {
+        const raw = localStorage.getItem(STORAGE_PREFIX + key);
+        state[key] = raw === 'true';
+      } catch (e) {
+        state[key] = false;
+      }
+    }
+  }
+}
+
+function saveItem(key, value) {
+  try {
+    localStorage.setItem(STORAGE_PREFIX + key, String(value));
+  } catch (e) {
+    storageAvailable = false;
+    // Silently degrade: checkmarks still work in-session, just won't persist after reload.
+  }
+}
+
+function render() {
+  const container = document.getElementById('pillars-container');
+  container.innerHTML = '';
+
+  let totalItems = 0, totalChecked = 0;
+
+  PILLARS.forEach((pillar, pIdx) => {
+    const checkedCount = pillar.items.filter((_, i) => state[pillar.id + ':' + i]).length;
+    totalItems += pillar.items.length;
+    totalChecked += checkedCount;
+
+    const pillarDiv = document.createElement('div');
+    pillarDiv.className = 'pillar';
+
+    const headerDiv = document.createElement('div');
+    const isPillarComplete = checkedCount === pillar.items.length;
+    headerDiv.className = 'pillar-header' + (pillar.warn ? ' warn' : '') + (isPillarComplete ? ' complete' : '');
+    headerDiv.innerHTML = `
+      <span class="pillar-title"><span class="num">${pIdx + 1}.</span>${pillar.name}${pillar.warn ? '<span class="warn-tag">⚠ WATCH CLOSELY</span>' : ''}</span>
+      <span class="pillar-progress${isPillarComplete ? ' complete' : ''}">${isPillarComplete ? '✓ ' : ''}${checkedCount}/${pillar.items.length} <span class="toggle-arrow">▾</span></span>
+    `;
+
+    const bodyDiv = document.createElement('div');
+    bodyDiv.className = 'pillar-body';
+    bodyDiv.id = pillar.id + '-body';
+
+    if (pillar.videos && pillar.videos.length > 0) {
+      const videosDiv = document.createElement('div');
+      videosDiv.className = 'pillar-videos';
+      pillar.videos.forEach(v => {
+        const a = document.createElement('a');
+        a.href = v.url;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.textContent = '▶ ' + v.label;
+        videosDiv.appendChild(a);
+      });
+      bodyDiv.appendChild(videosDiv);
+    } else {
+      const missingDiv = document.createElement('div');
+      missingDiv.className = 'pillar-videos-missing';
+      missingDiv.textContent = '🎥 Video link coming soon for this pillar';
+      bodyDiv.appendChild(missingDiv);
+    }
+
+    pillar.items.forEach((item, i) => {
+      const key = pillar.id + ':' + i;
+      const checked = !!state[key];
+      const itemDiv = document.createElement('div');
+      itemDiv.className = 'item' + (checked ? ' checked' : '');
+      const cbId = 'cb-' + key;
+      itemDiv.innerHTML = `
+        <input type="checkbox" id="${cbId}" ${checked ? 'checked' : ''}>
+        <label for="${cbId}">${item}</label>
+      `;
+      itemDiv.querySelector('input').addEventListener('change', (e) => {
+        state[key] = e.target.checked;
+        itemDiv.classList.toggle('checked', e.target.checked);
+        saveItem(key, e.target.checked);
+        updateHeaderProgress(pillar, headerDiv);
+        updateOverview();
+      });
+      bodyDiv.appendChild(itemDiv);
+    });
+
+    headerDiv.addEventListener('click', () => {
+      bodyDiv.classList.toggle('open');
+      const arrow = headerDiv.querySelector('.toggle-arrow');
+      arrow.textContent = bodyDiv.classList.contains('open') ? '▴' : '▾';
+    });
+
+    pillarDiv.appendChild(headerDiv);
+    pillarDiv.appendChild(bodyDiv);
+    container.appendChild(pillarDiv);
+  });
+
+  updateOverview();
+}
+
+function updateHeaderProgress(pillar, headerDiv) {
+  const checkedCount = pillar.items.filter((_, i) => state[pillar.id + ':' + i]).length;
+  const isPillarComplete = checkedCount === pillar.items.length;
+  headerDiv.classList.toggle('complete', isPillarComplete);
+  const progressSpan = headerDiv.querySelector('.pillar-progress');
+  progressSpan.classList.toggle('complete', isPillarComplete);
+  const arrow = progressSpan.querySelector('.toggle-arrow').outerHTML;
+  progressSpan.innerHTML = `${isPillarComplete ? '✓ ' : ''}${checkedCount}/${pillar.items.length} ${arrow}`;
+}
+
+function updateOverview() {
+  let totalItems = 0, totalChecked = 0;
+  PILLARS.forEach(pillar => {
+    totalItems += pillar.items.length;
+    totalChecked += pillar.items.filter((_, i) => state[pillar.id + ':' + i]).length;
+  });
+  const pct = totalItems > 0 ? Math.round((totalChecked / totalItems) * 100) : 0;
+  document.getElementById('overview-text').textContent = `Overall Progress: ${totalChecked} / ${totalItems} topics covered (${pct}%)`;
+  document.getElementById('overview-bar').style.width = pct + '%';
+  const pillarsComplete = PILLARS.filter(p => p.items.every((_, i) => state[p.id + ':' + i])).length;
+  document.getElementById('overview-sub').textContent = `${pillarsComplete} of ${PILLARS.length} pillars fully complete`;
+
+  const celebration = document.getElementById('celebration');
+  const celebrationSupport = document.querySelector('.celebration-support');
+  if (pct === 100) {
+    celebration.classList.add('show');
+    let pitchAlreadyShown = false;
+    try {
+      pitchAlreadyShown = localStorage.getItem('pillar-check:celebration-pitch-shown') === 'true';
+    } catch (e) { /* storage unavailable, default to showing it */ }
+
+    if (pitchAlreadyShown) {
+      celebrationSupport.style.display = 'none';
+    } else {
+      celebrationSupport.style.display = '';
+      try {
+        localStorage.setItem('pillar-check:celebration-pitch-shown', 'true');
+      } catch (e) { /* storage unavailable, pitch just won't be remembered next time */ }
+    }
+  } else {
+    celebration.classList.remove('show');
+  }
+}
+
+const nameInput = document.getElementById('student-name');
+function loadName() {
+  try {
+    const saved = localStorage.getItem('pillar-check:student-name');
+    if (saved) nameInput.value = saved;
+  } catch (e) { /* no saved name yet, ignore */ }
+}
+nameInput.addEventListener('input', () => {
+  try {
+    localStorage.setItem('pillar-check:student-name', nameInput.value);
+  } catch (e) { /* storage unavailable, name just won't persist */ }
+});
+
+// =====================================================================
+// SUPPORT BUTTON: replace SUPPORT_LINK with your real paypal.me link
+// once your account is set up (e.g. 'https://paypal.me/MathMadeEasyBetty').
+// The visible text below the button updates automatically from this value,
+// so students/parents can always see exactly where the button leads before
+// clicking, and can spot immediately if a copied file has a swapped link.
+// =====================================================================
+const SUPPORT_LINK = 'https://paypal.me/BethGmariam';
+
+const linkDisplay = document.getElementById('support-link-display');
+linkDisplay.textContent = SUPPORT_LINK
+  ? SUPPORT_LINK.replace('https://', '')
+  : 'Link coming soon, paypal.me/MathMadeEasyBetty (placeholder)';
+
+function handleSupportClick(confirmEl) {
+  try {
+    const existing = localStorage.getItem('pillar-check:support-clicks');
+    const count = existing ? parseInt(existing, 10) + 1 : 1;
+    localStorage.setItem('pillar-check:support-clicks', String(count));
+  } catch (e) { /* click tracking unavailable, not critical */ }
+
+  if (SUPPORT_LINK) {
+    const newWindow = window.open(SUPPORT_LINK, '_blank');
+    const wasBlocked = !newWindow || newWindow.closed || typeof newWindow.closed === 'undefined';
+    if (confirmEl) {
+      if (wasBlocked) {
+        confirmEl.innerHTML = 'Your browser blocked the popup. <a href="' + SUPPORT_LINK + '" target="_blank" rel="noopener" style="color:inherit; text-decoration:underline;">Tap here to continue</a> 💛';
+        confirmEl.style.color = 'var(--warn)';
+        // leave this one visible longer, and don't auto-clear it,
+        // since the person still needs to tap the fallback link
+      } else {
+        confirmEl.textContent = 'Thank you 💛 opening the link now...';
+        confirmEl.style.color = 'var(--done-accent)';
+        setTimeout(() => { confirmEl.textContent = ''; }, 4000);
+      }
+    }
+  } else {
+    if (confirmEl) {
+      confirmEl.textContent = 'Thank you for wanting to support MathMadeEasy! The link is coming soon. 💛';
+      confirmEl.style.color = 'var(--gold)';
+      setTimeout(() => { confirmEl.textContent = ''; }, 4000);
+    }
+  }
+}
+
+document.getElementById('support-btn').addEventListener('click', () => {
+  handleSupportClick(document.getElementById('support-confirm'));
+});
+document.getElementById('celebration-support-btn').addEventListener('click', () => {
+  handleSupportClick(document.getElementById('celebration-support-confirm'));
+});
+
+let resetArmed = false;
+let resetTimer = null;
+const resetBtn = document.getElementById('reset-btn');
+const resetOriginalText = resetBtn.textContent;
+
+resetBtn.addEventListener('click', () => {
+  if (!resetArmed) {
+    resetArmed = true;
+    resetBtn.textContent = 'Click again to confirm reset';
+    resetBtn.style.borderColor = 'var(--accent)';
+    resetBtn.style.color = 'var(--accent)';
+    clearTimeout(resetTimer);
+    resetTimer = setTimeout(() => {
+      resetArmed = false;
+      resetBtn.textContent = resetOriginalText;
+      resetBtn.style.borderColor = '';
+      resetBtn.style.color = '';
+    }, 4000);
+    return;
+  }
+
+  clearTimeout(resetTimer);
+  resetArmed = false;
+  resetBtn.textContent = resetOriginalText;
+  resetBtn.style.borderColor = '';
+  resetBtn.style.color = '';
+
+  for (const pillar of PILLARS) {
+    for (let i = 0; i < pillar.items.length; i++) {
+      const key = pillar.id + ':' + i;
+      state[key] = false;
+      saveItem(key, false);
+    }
+  }
+  render();
+});
+
+loadState();
+loadName();
+render();
+</script>
+
+</body>
+</html>
