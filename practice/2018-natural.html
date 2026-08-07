@@ -10,9 +10,8 @@
     svg: { scale: 1.3 }
   };
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js"></script>
-<!-- Once uploaded to GitHub: comment out the line above and uncomment the line below to use the local, offline-safe copy -->
-<!-- <script src="mathjax-local.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js"></script> -->
+<script src="mathjax-local.js"></script>
 <script>
 function toggleSolution(id, btn) {
   var el = document.getElementById(id);
@@ -90,6 +89,15 @@ header {
   padding-bottom: 18px;
   margin-bottom: 36px;
 }
+.back-link {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: bold;
+}
+.back-link:hover { text-decoration: underline; }
 header h1 { font-size: 1.5rem; margin: 0 0 6px; letter-spacing: 0.3px; }
 header p { margin: 2px 0; color: var(--muted); font-size: 0.92rem; }
 .mode-label {
@@ -188,6 +196,7 @@ footer { text-align: center; color: var(--muted); font-size: 0.8rem; margin-top:
 <body>
 
 <header>
+  <a class="back-link" href="/">&larr; Back to MathMadeEasy</a>
   <h1>MathMadeEasy</h1>
   <p class="mode-label">Quick Practice with Instant Feedback</p>
   <p>Unofficial Study Compilation, not affiliated with or endorsed by EAES</p>
@@ -204,6 +213,8 @@ footer { text-align: center; color: var(--muted); font-size: 0.8rem; margin-top:
   <strong>not predictive of future exam content</strong>. They're here to help future students practice, not to
   preview an upcoming paper. Provided free for student and educational use.
   <strong>Unauthorized use, resale, or redistribution is prohibited.</strong>
+  Click an option to answer. You'll see right away if you got it right, and can check your full score at the bottom
+  once you're done.
 </div>
 
 <div class="question" id="q1" data-scorable="1">
@@ -261,7 +272,7 @@ footer { text-align: center; color: var(--muted); font-size: 0.8rem; margin-top:
   </ul>
   <span class="final-answer">Answer: A</span><br><br>
   <a href="https://youtu.be/EtYARBuirgQ" target="_blank" rel="noopener">Watch this video for 50th percentile calculation (median)</a><br><br>
-  <div class="sol-note"><strong>Note:</strong> the scores in this table aren't evenly spaced (gaps of 2, 2, 1, 4, 1), so there's no single "correct" class width to build the 20.5&ndash;21.5 boundary from. It's a standard convention (width = 1 around the raw score), not something derived from the table.</div>
+  <div class="sol-note"><strong>Note:</strong> the scores in this table aren't evenly spaced (gaps of 2, 2, 1, 4, 1), so there's no single "correct" class width to build the 20.5&ndash;21.5 boundary from. It's a standard convention (width = 1 around the raw score), not something derived from the table. That's also why this method lands you at &asymp;20.6 rather than exactly 20.6.</div>
   </div>
 </div>
 
