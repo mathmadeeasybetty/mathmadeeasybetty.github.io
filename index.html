@@ -298,6 +298,25 @@
     .chapter-body-inner{ padding-left:4px; }
   }
 
+  /* ============ PRACTICE TEST 2018 Naturalexam link ============ */
+.practice-cta{
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  flex-wrap:wrap;
+  background:rgba(232,163,61,0.08);
+  border:1px solid var(--accent);
+  border-radius:8px;
+  padding:16px 20px;
+  margin:0 4px 6px;
+}
+.practice-cta-text{ flex:1; min-width:200px; }
+.practice-cta-text .resource-tag-free{ display:block; margin-bottom:4px; }
+.practice-cta-text p{ margin:0; font-size:0.88rem; color:var(--ink-soft); }
+.practice-cta .btn{ flex-shrink:0; }
+@media (max-width:520px){
+  .practice-cta{ flex-direction:column; align-items:stretch; }
+  .practice-cta .btn{ text-align:center; justify-content:center; }
+}
+
   /* ============ RESOURCES (products) ============ */
   .resource-grid{
     display:grid; gap:20px;
@@ -660,13 +679,13 @@
         <button class="chapter-head" aria-expanded="false">          <span class="chapter-title">Entrance Exam Practice Problems<small>Organized by chapter, covering Grade 9–12 topics for EUEE prep</small></span>
           <svg class="chapter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </button>
-        <!-- <a href="/practice/2018-natural.html"
-   style="display:inline-block; background:#8a1538; color:#ffffff;
-          font-family:Georgia,'Times New Roman',serif; font-size:1.05rem;
-          font-weight:bold; padding:14px 30px; border-radius:6px;
-          text-decoration:none;target="_blank" rel="noopener"">
-  Start practicing free
-</a> -->
+<div class="practice-cta">
+  <div class="practice-cta-text">
+    <span class="resource-tag resource-tag-free">Free · Instant Feedback</span>
+    <p>60 real 2018 E.C. entrance exam questions, with step-by-step solutions and an instant score.</p>
+  </div>
+  <a class="btn btn-accent" href="/practice/2018-natural.html" rel="noopener">Start practicing free →</a>
+</div>
         <div class="chapter-body">
           <div class="chapter-body-inner">
             <div class="video-list">
