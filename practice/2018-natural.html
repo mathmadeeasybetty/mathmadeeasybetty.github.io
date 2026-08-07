@@ -10,8 +10,9 @@
     svg: { scale: 1.3 }
   };
 </script>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js"></script> -->
-<script src="mathjax-local.js"></script>
+<!-- Loads the offline copy first (works with no internet, faster for repeat visits).
+     If mathjax-local.js is missing for any reason, falls back to the CDN automatically. -->
+<script src="mathjax-local.js" onerror="var s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js';document.head.appendChild(s);"></script>
 <script>
 function toggleSolution(id, btn) {
   var el = document.getElementById(id);
@@ -199,11 +200,6 @@ footer { text-align: center; color: var(--muted); font-size: 0.8rem; margin-top:
   <a class="back-link" href="/">&larr; Back to MathMadeEasy</a>
   <h1>MathMadeEasy</h1>
   <p class="mode-label">Quick Practice with Instant Feedback</p>
-  <p>Unofficial Study Compilation, not affiliated with or endorsed by EAES</p>
-  <p>Mathematics for Natural, 2018 E.C. Entrance Exam</p>
-  <div class="meta-row">
-    <span>Number of Items: 60</span>
-  </div>
 </header>
 
 <div class="notice">
@@ -213,9 +209,9 @@ footer { text-align: center; color: var(--muted); font-size: 0.8rem; margin-top:
   <strong>not predictive of future exam content</strong>. They're here to help future students practice, not to
   preview an upcoming paper. Provided free for student and educational use.
   <strong>Unauthorized use, resale, or redistribution is prohibited.</strong>
-  Click an option to answer. You'll see right away if you got it right, and can check your full score at the bottom
-  once you're done.
 </div>
+
+<p style="text-align:left; font-weight:bold; margin: 0 0 26px 38px;">Click an option to answer. Give it your best shot before checking the solution, struggling a bit is part of how you remember it.</p>
 
 <div class="question" id="q1" data-scorable="1">
   <div class="q-text"><span class="q-num">1.</span><span class="q-body">What is the solution of the equation $\sqrt[4]{9^{x-1}}=3$?</span></div>
@@ -1488,13 +1484,14 @@ Order of arrangement doesn't matter when selecting two cars, Car A, B is the sam
   <div class="feedback" id="feedback43"></div>
   <button class="solve-btn" onclick="toggleSolution('sol43', this)">Show Solution ▾</button>
   <div class="solution" id="sol43">
+  <span style="font-size:16.9px"><strong>Shortcut:</strong></span>
 <ul class="sol-steps">
   <li style="font-size:16.9px">The graph crosses the $y$-axis at $(0,-2)$. Substitute $x=0$ into each of the four choices and see which one gives $f(0)=-2$, this eliminates most of the choices right away</li>
   <li style="font-size:16.9px">You can also use the $x$-intercept $(-2,0)$ to double check: substitute $x=-2$ and see which choice gives $f(-2)=0$</li>
   <li style="font-size:16.9px">Or use the vertical dotted line ($x=\frac12$): substituting $\frac12$ into $x$ should make the denominator zero for the correct choice</li>
   </ul>
   <span class="final-answer" style="font-size:15.6px">Answer: D</span><br><br>
-  <span style="font-size:18.2px"><strong>Formal method:</strong> the graph shows a vertical asymptote at $x=\frac12$ and a horizontal asymptote at $y=\frac12$.</span>
+  <span style="font-size:16.9px"><strong>Formal method:</strong> the graph shows a vertical asymptote at $x=\frac12$ and a horizontal asymptote at $y=\frac12$.</span>
   <ul class="sol-steps">
   <li style="font-size:16.9px">A: $f(x)=\dfrac{x-2}{x+\frac12}$, vertical asymptote at $x=-\frac12$, horizontal asymptote $y=1$, matches neither.</li>
   <li style="font-size:16.9px">B: $f(x)=\dfrac{2x-3}{x-\frac12}$, vertical asymptote at $x=\frac12$ (matches), horizontal asymptote $y=2$ (does not match).</li>
@@ -2027,7 +2024,7 @@ Order of arrangement doesn't matter when selecting two cars, Car A, B is the sam
   <text x="312" y="222" font-size="26" fill="#1c1c1c">O</text>
   <line x1="132.1" y1="130.8" x2="860" y2="320" stroke="#1c1c1c" stroke-width="2.4"/>
   <line x1="243.0" y1="439.7" x2="860" y2="320" stroke="#1c1c1c" stroke-width="2.4"/>
-  <path d="M 816.4,308.7 A 45,45 0 0 0 815.8,328.6" fill="none" stroke="#1c1c1c" stroke-width="1.5"/>
+  <path d="M 815.9,311.0 A 45,45 0 0 0 815.4,326.2" fill="none" stroke="#1c1c1c" stroke-width="1.5"/>
   <circle cx="132.1" cy="130.8" r="3.5" fill="#1c1c1c"/>
   <circle cx="494.9" cy="225.1" r="3.5" fill="#1c1c1c"/>
   <circle cx="337.1" cy="421.4" r="3.5" fill="#1c1c1c"/>
@@ -2179,6 +2176,7 @@ Order of arrangement doesn't matter when selecting two cars, Car A, B is the sam
 <div class="score-section">
   <button class="score-btn" onclick="showScore()">Show My Score</button>
   <div id="score-result"></div>
+  <div style="margin-top: 18px;"><a class="back-link" href="/">&larr; Back to MathMadeEasy</a></div>
 </div>
 
 <footer>Compiled and solved as a student study aid. Original questions: Educational Assessment and Examinations Service (EAES).</footer>
