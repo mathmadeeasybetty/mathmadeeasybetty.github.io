@@ -9,7 +9,18 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MathMadeEasy: Pillar Checklist</title>
+<meta name="description" content="Free interactive checklist for Ethiopian EUEE math prep, all 20 pillars from Number Systems to Calculus. Check off topics as you study.">
+<meta property="og:title" content="MathMadeEasy: Pillar Checklist">
+<meta property="og:description" content="Free interactive checklist for Ethiopian EUEE math prep, all 20 pillars from Number Systems to Calculus. Check off topics as you study.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mathmadeeasybetty.com/checklist.html">
+<meta property="og:image" content="https://mathmadeeasybetty.com/og_image.png">
+<link rel="canonical" href="https://mathmadeeasybetty.com/checklist.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MathMadeEasy: Pillar Checklist">
+<meta name="twitter:description" content="Free interactive checklist for Ethiopian EUEE math prep, all 20 pillars from Number Systems to Calculus.">
 <style>
   :root {
     --ink: #1c1c1c;
@@ -203,16 +214,6 @@
     margin-bottom: 18px;
     border-radius: 2px;
   }
-  .priority-note {
-    background: #fdf8ec;
-    border-left: 4px solid var(--gold);
-    padding: 10px 14px;
-    margin: 0 0 16px;
-    border-radius: 2px;
-    font-size: 0.82rem;
-    color: var(--ink);
-    line-height: 1.5;
-  }
   #overview-text {
     font-size: 0.9rem;
   }
@@ -331,6 +332,18 @@
     font-size: 0.72rem;
     font-weight: bold;
     margin-left: 6px;
+  }
+  .new-tag {
+    display: inline-block;
+    color: var(--done-accent);
+    background: var(--done-bg);
+    font-size: 0.68rem;
+    font-weight: bold;
+    letter-spacing: 0.03em;
+    padding: 1px 7px;
+    border-radius: 999px;
+    margin-left: 6px;
+    vertical-align: middle;
   }
   .pillar-progress {
     font-size: 0.8rem;
@@ -514,8 +527,6 @@
   <p>Track your coverage across every topic pillar as you study</p>
 </header>
 
-<p class="priority-note">📊 Not sure where to focus first? Check the <strong>Natural vs Social comparison table</strong> to see which pillars overlap most between streams, and which ones need extra attention.</p>
-
 <div class="name-field">
   <label for="student-name">Personalize your checklist (just for you, not visible to anyone else):</label>
   <input type="text" id="student-name" placeholder="Enter your name">
@@ -524,7 +535,6 @@
 <div class="overview">
   <strong id="overview-text">Loading progress…</strong>
   <div class="overview-bar-track"><div class="overview-bar-fill" id="overview-bar"></div></div>
-  <div class="overview-text" id="overview-sub"></div>
 </div>
 
 <div class="celebration" id="celebration">
@@ -562,7 +572,8 @@ const PILLARS = [
   ], items: [
     'Rational vs. irrational classification',
     'Laws of exponents & radicals',
-    'Standard / scientific notation'
+    'Standard / scientific notation',
+    'Rounding, bounds & estimation <span class="new-tag">NEW</span>'
   ]},
   { id: 'p2', name: 'Sets & Elements', videos: [
     { label: 'Sets & Elements', url: 'https://www.youtube.com/playlist?list=PLCqaz5YaSxqKT8BupD-umWj9RhzrHVP7n' }
@@ -575,9 +586,11 @@ const PILLARS = [
     { label: 'Relations & Functions', url: 'https://www.youtube.com/playlist?list=PLCqaz5YaSxqJgrEQozKJ3eLVlyS0p0sAx' }
   ], items: [
     'Function operations (+, −, ×, ÷)',
+    'Type of functions (one-to-one, onto, one-to-one correspondence)',
     'Special functions (power, floor)',
     'Rational functions (graph, asymptotes)',
-    'Type of functions (one-to-one, onto, one-to-one correspondence)'
+    'Partial fraction decomposition (distinct & repeated linear factors) <span class="new-tag">NEW</span>',
+    'Intermediate Value Theorem (locating roots) <span class="new-tag">NEW</span>'
   ]},
   { id: 'p4', name: 'Coordinate Geometry', videos: [
     { label: 'Equation of a Line', url: 'https://www.youtube.com/playlist?list=PLHAu8NQ2i2BM' },
@@ -593,7 +606,8 @@ const PILLARS = [
   ], items: [
     'Linear & quadratic equations, root relationships',
     'Classifying systems (unique / none / infinite solutions)',
-    'Homogeneous vs. non-homogeneous (know the difference)'
+    'Homogeneous vs. non-homogeneous (know the difference)',
+    'Complex number basics (+, −, ×, ÷) <span class="new-tag">NEW</span>'
   ]},
   { id: 'p6', name: 'Inequalities', videos: [
     { label: 'Inequalities', url: 'https://www.youtube.com/playlist?list=PLYi1Y5Y0sH-g' }
@@ -633,7 +647,9 @@ const PILLARS = [
     { label: 'Vectors', url: 'https://www.youtube.com/playlist?list=PLCqaz5YaSxqIk3gVYBK8H-_9SA9KSFvgz' }
   ], items: [
     'Vector addition (triangle / parallelogram law)',
-    'Scalar vs. vector quantities'
+    'Scalar vs. vector quantities',
+    'Position vectors & components between two points <span class="new-tag">NEW</span>',
+    'Area of a parallelogram via cross product (incl. 3D vectors) <span class="new-tag">NEW</span>'
   ]},
   { id: 'p12', name: 'Matrices & Determinants', videos: [
     { label: 'Matrix & Determinant', url: 'https://www.youtube.com/playlist?list=PLCqaz5YaSxqKWN49Y4CWasn1TRxxBJX5H' }
@@ -654,11 +670,15 @@ const PILLARS = [
     { label: 'Statistics', url: 'https://www.youtube.com/playlist?list=PLCqaz5YaSxqKLKNBWSpTK0duFWUAz3Roc' }
   ], items: [
     'Data types (Qualitative vs Quantitative)',
-    'Sampling techniques',
-    'Grouped frequency distributions',
-    'Mean, median, mode (unimodal/bimodal/multimodal)',
+    'Sampling techniques (Random, Systematic, Stratified, Cluster)',
+    'Grouped frequency distributions (class mark, class midpoint)',
+    'Central tendency (mean, median, mode)',
+    'Properties of central tendency (sensitivity to outliers, sum of deviations from the mean = 0, uniqueness, use of all data values) <span class="new-tag">NEW</span>',
+    'Type of modes (unimodal, bimodal, multimodal) <span class="new-tag">NEW</span>',
     'Mean from grouped/frequency data',
-    'Dispersion measures (mean deviation, quartile deviation)'
+    'Dispersion measures (mean deviation, quartile deviation, variance, standard deviation)',
+    'Coefficient of dispersion (coefficient of quartile deviation, coefficient of mean deviation, coefficient of variance/CVR) <span class="new-tag">NEW</span>',
+    'Percentile computation (grouped-data interpolation) <span class="new-tag">NEW</span>'
   ]},
   { id: 'p15', name: 'Probability', videos: [
     { label: 'Probability', url: 'https://www.youtube.com/playlist?list=PLCqaz5YaSxqLysS_w5vnz90YsX2uGPrQj' }
@@ -709,9 +729,9 @@ const PILLARS = [
     'Circle & line transformation problems'
   ]}
 ];
-// STATUS: all 20 pillars have confirmed, entrance-exam-sourced video links as of
-// the latest update. Relations & Functions (p3) uses a Freshman-level playlist as
-// an interim pick, swap in a Grade-9-specific entrance link if one is made later.
+// STATUS: all 20 pillars have confirmed, entrance-exam-sourced video links.
+// Relations & Functions (p3) uses a Freshman-level playlist as an interim
+// pick, swap in a Grade-9-specific entrance link if one is made later.
 // =====================================================================
 
 const STORAGE_PREFIX = 'pillar-check:';
@@ -831,16 +851,10 @@ function updateHeaderProgress(pillar, headerDiv) {
 }
 
 function updateOverview() {
-  let totalItems = 0, totalChecked = 0;
-  PILLARS.forEach(pillar => {
-    totalItems += pillar.items.length;
-    totalChecked += pillar.items.filter((_, i) => state[pillar.id + ':' + i]).length;
-  });
-  const pct = totalItems > 0 ? Math.round((totalChecked / totalItems) * 100) : 0;
-  document.getElementById('overview-text').textContent = `Overall Progress: ${totalChecked} / ${totalItems} topics covered (${pct}%)`;
-  document.getElementById('overview-bar').style.width = pct + '%';
   const pillarsComplete = PILLARS.filter(p => p.items.every((_, i) => state[p.id + ':' + i])).length;
-  document.getElementById('overview-sub').textContent = `${pillarsComplete} of ${PILLARS.length} pillars fully complete`;
+  const pct = PILLARS.length > 0 ? Math.round((pillarsComplete / PILLARS.length) * 100) : 0;
+  document.getElementById('overview-text').textContent = `${pillarsComplete} of ${PILLARS.length} Pillars Complete`;
+  document.getElementById('overview-bar').style.width = pct + '%';
 
   const celebration = document.getElementById('celebration');
   const celebrationSupport = document.querySelector('.celebration-support');
