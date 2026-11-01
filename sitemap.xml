@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ============================================================================
+  This file belongs at your REPO ROOT as sitemap.xml.
+  In the zip it is already in the ROOT/ folder, which mirrors your repo, so
+  just copy ROOT/sitemap.xml to the top level of your repo.
+
+  This replaces the earlier blog-only sitemap. Reason: your main pages
+  (homepage, checklist, practice exam) were not in any sitemap either, and a
+  sitemap at the root can cover the whole site, while one inside /blog/ can
+  only cover /blog/ URLs. One file, everything in it, simpler to maintain.
+
+  ADD EVERY NEW PAGE HERE, blog post or not. A page that is in no sitemap and
+  has no links pointing at it can sit undiscovered for a long time.
+
+  <changefreq> and <priority> are deliberately omitted: Google ignores both.
+  ============================================================================
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- main site -->
+  <url>
+    <loc>https://mathmadeeasybetty.com/</loc>
+    <lastmod>2026-08-28</lastmod>
+  </url>
+
+  <url>
+    <loc>https://mathmadeeasybetty.com/checklist.html</loc>
+    <lastmod>2026-08-28</lastmod>
+  </url>
+
+  <url>
+    <loc>https://mathmadeeasybetty.com/practice/2018-natural.html</loc>
+    <lastmod>2026-08-28</lastmod>
+  </url>
+
+  <!-- blog -->
+  <url>
+    <loc>https://mathmadeeasybetty.com/blog/</loc>
+    <lastmod>2026-08-30</lastmod>
+  </url>
+
+  <url>
+    <loc>https://mathmadeeasybetty.com/blog/calculator-negative-square-trap.html</loc>
+    <lastmod>2026-08-29</lastmod>
+  </url>
+
+  <url>
+    <loc>https://mathmadeeasybetty.com/blog/pemdas-trap.html</loc>
+    <lastmod>2026-08-28</lastmod>
+  </url>
+
+</urlset>

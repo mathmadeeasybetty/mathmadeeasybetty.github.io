@@ -1,0 +1,362 @@
+/* ==========================================================================
+   MathMadeEasy Blog — shared stylesheet
+   Used by: index.html (hub) and every post file.
+
+   DESIGN PRINCIPLE: one dark block per page, and it is the thing you want
+   clicked. Saturated colour lives only in small meaningful marks (the trap
+   card badges and bars, the gold accents). Large surfaces stay white, paper
+   or navy. Separation comes from 1px borders, not shadows.
+
+   One shared file so the browser caches it once across every post, and a
+   colour or spacing change only has to happen in one place.
+   ========================================================================== */
+
+:root{
+  /* ---- text ---- */
+  --ink:        #16233f;   /* body copy */
+  --ink-soft:   #46577a;   /* secondary text, meta, captions */
+  --navy:       #0b2f66;   /* headings, primary brand */
+  --navy-deep:  #071b3f;   /* footer, hover states */
+
+  /* ---- surfaces ---- */
+  --white:      #ffffff;
+  --paper:      #f7f6f2;
+  --line:       #e5e1d6;   /* hairline border, the main separator */
+  --line-soft:  #efece4;
+
+  /* ---- accent ---- */
+  --gold:       #e8a33d;   /* CTA fill, accent rules. Used sparingly. */
+  --gold-hover: #cf8620;
+  --gold-ink:   #a8461f;   /* gold family used as TEXT, darkened for contrast */
+  --tag-bg:     #fbf1e2;
+
+  /* ---- semantic: wrong / right ----
+     Soft tints, not saturated panels. The meaning is carried by three
+     signals at once (bar colour, ✕/✓ badge, label word) so it survives
+     greyscale printing and red/green colour blindness. */
+  --wrong-bg:   #fdf4f3;
+  --wrong-edge: #f0d3cf;
+  --wrong-bar:  #c0392f;
+  --wrong-ink:  #963029;
+  --right-bg:   #f1f8f4;
+  --right-edge: #cee4d8;
+  --right-bar:  #2f7d54;
+  --right-ink:  #1d6242;
+
+  --font-display: Georgia, "Times New Roman", ui-serif, serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "Courier New", monospace;
+
+  --max: 1180px;
+  --read: 680px;       /* article body. 680 keeps the line near 70 characters,
+                          which is the comfortable range for long reading. */
+  --read-wide: 800px;  /* blog hub listing width */
+
+  /* neutral, barely-there elevation */
+  --shadow-sm: 0 1px 2px rgba(16,24,40,0.05);
+  --shadow:    0 1px 3px rgba(16,24,40,0.06), 0 6px 16px rgba(16,24,40,0.05);
+  --shadow-lg: 0 2px 6px rgba(16,24,40,0.07), 0 14px 30px rgba(16,24,40,0.07);
+}
+
+/* ---------- base ---------- */
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0; font-family:var(--font-body); color:var(--ink);
+  background:var(--white); line-height:1.65; -webkit-font-smoothing:antialiased;
+}
+/* height:auto is NOT optional here. Images carry width/height attributes so
+   the browser can reserve their space before the file arrives (good for CLS
+   and for LCP priority). But max-width:100% then shrinks the WIDTH while the
+   height attribute still applies literally, so a 1400x1400 image renders
+   340 wide and 1400 tall. height:auto restores the aspect ratio while keeping
+   the reserved space. Never write one without the other. */
+img{ max-width:100%; height:auto; display:block; }
+a{ color:inherit; text-decoration:none; }
+sup{ font-size:0.62em; line-height:0; }
+.wrap{ max-width:var(--max); margin:0 auto; padding:0 24px; }
+h1,h2,h3,h4{ font-family:var(--font-display); margin:0; color:var(--ink); }
+::selection{ background:rgba(232,163,61,0.3); }
+@media (prefers-reduced-motion: reduce){ *{ transition:none !important; scroll-behavior:auto !important; } }
+
+/* Keyboard focus. Students on Chromebooks and school lab machines tab
+   through pages; without this there is no visible focus ring on the CTAs. */
+a:focus-visible, button:focus-visible, summary:focus-visible{
+  outline:3px solid var(--gold); outline-offset:3px; border-radius:4px;
+}
+
+:target{ scroll-margin-top:90px; }
+
+.eyebrow{
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.09em;
+  text-transform:uppercase; color:var(--navy); font-weight:700;
+  background:var(--paper); border:1px solid var(--line);
+  padding:6px 14px; border-radius:999px;
+}
+.eyebrow.on-dark{ background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.24); color:var(--gold); }
+
+.btn{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:14px 26px; border-radius:8px; font-weight:700; font-size:0.95rem;
+  text-decoration:none; border:1px solid transparent; cursor:pointer;
+  transition:background .15s ease, transform .1s ease, box-shadow .15s ease;
+}
+.btn:active{ transform:translateY(1px); }
+.btn-gold{ background:var(--gold); color:#3a2405; }
+.btn-gold:hover{ background:var(--gold-hover); color:#2b1a03; }
+.btn-navy{ background:var(--navy); color:#fff; }
+.btn-navy:hover{ background:var(--navy-deep); }
+
+/* ---------- nav ---------- */
+header.site-nav{ position:sticky; top:0; z-index:50; background:rgba(255,255,255,0.94); backdrop-filter:saturate(180%) blur(8px); border-bottom:1px solid var(--line); }
+.nav-inner{
+  display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap;
+  gap:10px 20px; padding:16px 24px; max-width:var(--max); margin:0 auto;
+}
+.logo{ font-family:var(--font-display); font-weight:700; font-size:1.28rem; color:var(--navy); text-decoration:none; }
+nav.links{ display:flex; align-items:center; gap:22px; flex-wrap:wrap; }
+nav.links a{ font-size:0.92rem; text-decoration:none; color:var(--ink-soft); font-weight:600;
+  display:inline-flex; align-items:center; min-height:44px; }
+nav.links a:hover{ color:var(--navy); }
+.nav-cta{ background:var(--navy); color:var(--white) !important; padding:10px 18px; border-radius:8px; font-weight:700; font-size:0.86rem; }
+.nav-cta:hover{ background:var(--navy-deep); }
+
+/* ---------- blog hub cover ---------- */
+.blog-hero{ background:var(--paper); padding:72px 0 56px; border-bottom:1px solid var(--line); text-align:center; }
+.blog-hero .eyebrow{ margin-bottom:20px; background:var(--white); }
+.blog-hero h1{ font-size:clamp(2.1rem,4.6vw,2.85rem); line-height:1.15; margin:0 0 18px; text-wrap:balance; color:var(--navy); }
+.blog-hero .accent-rule{ width:56px; height:4px; background:var(--gold); border-radius:2px; margin:0 auto 22px; }
+.blog-hero p{ font-size:1.1rem; color:var(--ink-soft); max-width:560px; margin:0 auto; }
+
+/* ---------- blog hub post cards ---------- */
+.posts-section{ max-width:var(--read-wide); margin:0 auto; padding:52px 24px 68px; }
+.post-card{
+  position:relative; overflow:hidden;
+  display:block; background:var(--white); border:1px solid var(--line);
+  border-radius:14px; padding:28px 30px; margin-bottom:18px;
+  box-shadow:var(--shadow-sm);
+  transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.post-card::before{
+  content:""; position:absolute; left:0; top:0; bottom:0; width:4px;
+  background:var(--gold); transform:scaleY(0); transform-origin:top;
+  transition:transform .18s ease;
+}
+.post-card:hover::before, .post-card:focus-visible::before{ transform:scaleY(1); }
+.post-card:hover{ transform:translateY(-2px); box-shadow:var(--shadow); border-color:#dcd6c6; }
+.post-tag{
+  display:inline-block; font-family:var(--font-mono); font-size:0.75rem;
+  color:var(--gold-ink); text-transform:uppercase; letter-spacing:0.08em;
+  margin-bottom:12px; font-weight:700; background:var(--tag-bg);
+  padding:4px 10px; border-radius:999px;
+}
+.post-card h2{ font-family:var(--font-display); font-size:1.45rem; line-height:1.3; color:var(--navy); margin:0 0 10px; text-wrap:balance; }
+.post-card p{ color:var(--ink-soft); font-size:1rem; margin:0 0 16px; }
+.post-meta{ font-family:var(--font-mono); font-size:0.8rem; color:var(--ink-soft); }
+
+/* ---------- single post: hero ---------- */
+.post-hero{ background:var(--paper); padding:46px 0 36px; border-bottom:1px solid var(--line); }
+.post-hero .inner{ max-width:var(--read); margin:0 auto; padding:0 24px; }
+.post-hero .eyebrow{ background:var(--white); }
+.post-hero h1{ font-size:clamp(1.85rem,4.2vw,2.6rem); line-height:1.2; margin:16px 0 14px; text-wrap:balance; color:var(--navy); }
+.post-desc{ font-size:1.06rem; color:var(--ink-soft); margin-bottom:16px; }
+
+/* ---------- single post: hero image ---------- */
+.post-image{ max-width:var(--read); margin:34px auto; padding:0 24px; }
+.post-image .frame{ border-radius:12px; overflow:hidden; border:1px solid var(--line); box-shadow:var(--shadow-sm); }
+.post-image figcaption{ font-family:var(--font-mono); font-size:0.74rem; color:var(--ink-soft); margin-top:10px; text-align:center; }
+
+/* ---------- single post: body copy ---------- */
+.post-body{ max-width:var(--read); margin:0 auto; padding:8px 24px 10px; }
+.post-body p{ font-size:1.07rem; line-height:1.75; margin:0 0 22px; color:var(--ink); }
+.post-body strong{ color:var(--navy); }
+
+.post-body h2{
+  position:relative; font-size:1.45rem; margin:48px 0 16px; padding-top:16px;
+  text-wrap:balance; color:var(--navy);
+}
+.post-body h2::before{
+  content:""; position:absolute; top:0; left:0;
+  width:36px; height:3px; background:var(--gold); border-radius:2px;
+}
+
+/* inline code, for calculator keystrokes and spreadsheet formulas. Deliberately
+   NOT MathJax: a spreadsheet formula is literal text a student types, not
+   mathematical notation, and it should look like it. */
+.post-body code{
+  font-family:var(--font-mono); font-size:0.92em;
+  background:var(--paper); border:1px solid var(--line);
+  border-radius:5px; padding:2px 6px; color:var(--navy);
+  white-space:nowrap;
+}
+
+.post-body ul,
+.post-body ol{ font-size:1.07rem; line-height:1.75; color:var(--ink); margin:0 0 22px; padding-left:24px; }
+.post-body li{ margin-bottom:10px; }
+.post-body li:last-child{ margin-bottom:0; }
+.post-body ol li::marker{ color:var(--navy); font-weight:700; }
+.post-body ul li::marker{ color:var(--gold-ink); }
+
+/* featured equation. overflow-x matters: a long expression would otherwise
+   force the whole page wider than a 360px phone screen. */
+.post-body .math-display{
+  text-align:center; font-size:1.2rem; color:var(--navy);
+  background:var(--paper); border:1px solid var(--line);
+  border-left:3px solid var(--gold); border-radius:10px;
+  padding:22px 18px; margin:28px 0 26px;
+  overflow-x:auto; overflow-y:hidden;
+}
+
+/* ---------- trap card ----------
+   Light card, tinted panels. See the note at the top of this file for why
+   this is not the navy version any more. */
+.trap-card{
+  background:var(--white); border:1px solid var(--line);
+  border-radius:16px; padding:26px 24px 24px; margin:38px 0;
+  box-shadow:var(--shadow-sm);
+}
+.trap-card .eyebrow{ margin-bottom:14px; }
+.trap-card h3{ color:var(--navy); font-size:1.16rem; margin-bottom:20px; line-height:1.4; }
+.trap-row{ display:flex; gap:14px; flex-wrap:wrap; }
+.trap-col{
+  flex:1; min-width:220px; border-radius:10px; padding:16px 18px 14px;
+  border:1px solid transparent; border-left-width:4px;
+  overflow-x:auto;
+}
+.trap-wrong{
+  background:var(--wrong-bg);
+  border-color:var(--wrong-edge) var(--wrong-edge) var(--wrong-edge) var(--wrong-bar);
+}
+.trap-right{
+  background:var(--right-bg);
+  border-color:var(--right-edge) var(--right-edge) var(--right-edge) var(--right-bar);
+}
+/* deliberately display:block, not flex. Some trap labels contain inline math
+   (e.g. "$-3^2$ (without parentheses)"), and flex would turn the MathJax
+   container and the text after it into separate flex items, collapsing the
+   space between them. */
+.trap-label{
+  display:block;
+  font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.08em;
+  text-transform:uppercase; margin-bottom:12px; font-weight:700; line-height:1.6;
+}
+/* the ✕ / ✓ badge carries the meaning, because text-decoration:line-through
+   does NOT render over MathJax SVG output. */
+.trap-label::before{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:18px; height:18px; border-radius:50%; color:#fff;
+  font-size:0.68rem; font-weight:700; margin-right:8px; vertical-align:-4px;
+}
+.trap-wrong .trap-label{ color:var(--wrong-ink); }
+.trap-right .trap-label{ color:var(--right-ink); }
+.trap-wrong .trap-label::before{ content:"\2715"; background:var(--wrong-bar); }
+.trap-right .trap-label::before{ content:"\2713"; background:var(--right-bar); }
+.trap-col p{ font-size:1rem; margin:0; line-height:1.9; color:var(--ink); }
+
+/* ---------- your turn ----------
+   The one place in a post where the reader does math instead of reading it.
+   Built on native <details>, deliberately not JavaScript: it works with JS
+   disabled and on a dead connection, and MathJax typesets the answer even
+   while the block is collapsed. One per post, after the trap card. */
+.your-turn{
+  background:var(--paper); border:1px solid var(--line);
+  border-left:4px solid var(--navy);
+  border-radius:12px; padding:22px 22px 18px; margin:32px 0;
+}
+.your-turn .eyebrow{ background:var(--white); margin-bottom:14px; }
+.your-turn .prompt{
+  text-align:center; font-size:1.25rem; color:var(--navy);
+  background:var(--white); border:1px solid var(--line); border-radius:10px;
+  padding:20px 16px; margin:0 0 4px; overflow-x:auto; overflow-y:hidden;
+}
+.your-turn details{ border-top:1px solid var(--line); margin-top:16px; padding-top:14px; }
+/* min-height keeps the reveal a comfortable tap target on a phone */
+.your-turn summary{
+  cursor:pointer; font-weight:700; font-size:0.95rem; color:var(--navy);
+  list-style:none; display:flex; align-items:center; gap:9px;
+  min-height:44px; margin:-6px 0;
+}
+.your-turn summary::-webkit-details-marker{ display:none; }
+.your-turn summary::before{
+  content:"+"; display:inline-flex; align-items:center; justify-content:center;
+  width:21px; height:21px; flex:0 0 auto; border-radius:50%;
+  background:var(--navy); color:#fff; font-size:0.95rem; line-height:1;
+}
+.your-turn details[open] summary::before{ content:"\2212"; }
+.your-turn details[open] summary{ margin-bottom:14px; }
+.your-turn .answer p{ font-size:1.02rem; line-height:1.8; margin:0 0 12px; }
+.your-turn .answer p:last-child{ margin:0; }
+
+/* ---------- author box links ---------- */
+.author-links{ margin:14px 0 0; font-size:0.9rem; }
+.author-links a{ color:var(--navy); font-weight:700; text-decoration:underline; }
+.author-note{ display:block; margin-top:6px; color:var(--ink-soft); font-size:0.85rem; }
+
+/* ---------- mini CTA ---------- */
+.mini-cta{
+  display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+  background:var(--paper); border:1px solid var(--line); border-left:3px solid var(--gold);
+  border-radius:12px; padding:18px 22px; margin:30px 0;
+}
+.mini-cta p{ margin:0; font-size:0.95rem; color:var(--ink); font-weight:700; }
+.mini-cta .btn{ flex-shrink:0; padding:11px 20px; font-size:0.86rem; }
+
+/* ---------- related posts ---------- */
+.related-posts{ max-width:var(--read); margin:52px auto 0; padding:0 24px; }
+.related-posts h2{ font-size:1.15rem; margin:0 0 16px; color:var(--navy); }
+.related-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; }
+.related-grid a{
+  display:block; background:var(--white); border:1px solid var(--line); border-radius:12px; padding:18px 20px;
+  text-decoration:none; box-shadow:var(--shadow-sm); transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.related-grid a:hover{ transform:translateY(-2px); box-shadow:var(--shadow); border-color:#dcd6c6; }
+.related-grid .post-tag{ margin-bottom:8px; }
+.related-grid h3{ font-family:var(--font-display); font-size:1.02rem; line-height:1.35; color:var(--navy); margin:0; }
+
+/* ---------- email capture (OFF by default, see post-template.html) ---------- */
+.email-capture{
+  max-width:var(--read); margin:36px auto; padding:26px 28px;
+  background:var(--navy); border-radius:14px; text-align:center;
+}
+.email-capture .eyebrow.on-dark{ margin-bottom:12px; }
+.email-capture h3{ color:var(--white); font-size:1.18rem; margin-bottom:10px; }
+.email-capture p{ color:#c9d3e4; font-size:0.94rem; margin:0 0 18px; }
+
+/* ---------- author box ---------- */
+.author-box{ max-width:var(--read); margin:44px auto; padding:24px 26px; background:var(--paper); border-radius:14px; border:1px solid var(--line); }
+.author-box h4{ margin:0; font-size:1.02rem; color:var(--navy); }
+.author-box .author-bio{ margin-top:8px; font-size:0.92rem; color:var(--ink-soft); }
+
+/* ---------- end-of-post CTA ----------
+   The only dark block in an article. Flat navy, not a gradient: with every
+   other surface now light, it does not need the extra help. */
+.post-cta-wrap{ max-width:var(--read); margin:44px auto 64px; padding:0 24px; }
+.post-cta{
+  background:var(--navy);
+  border-radius:14px; padding:28px; display:flex;
+  align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
+}
+.post-cta-text{ flex:1; min-width:200px; }
+.post-cta-text .eyebrow.on-dark{ margin-bottom:10px; }
+.post-cta-text p{ color:#dfe6ee; font-size:0.96rem; margin:0; }
+
+/* ---------- footer ---------- */
+footer{ background:var(--navy-deep); color:#a6b5cd; padding:44px 0 26px; margin-top:20px; }
+.footer-bottom{ font-size:0.77rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+.footer-bottom a{ color:#c9d3e4; }
+
+/* ---------- print ----------
+   Now almost nothing to undo, because the article is already light. That is
+   a side benefit of the v5 inversion: what a student prints matches what
+   they saw on screen. */
+@media print{
+  header.site-nav, .mini-cta, .post-cta-wrap, .related-posts, footer{ display:none !important; }
+  body{ background:#fff; color:#000; }
+  .post-hero, .author-box{ background:#fff !important; }
+  .post-hero h1, .post-body h2, .post-body strong, .trap-card h3{ color:#000; }
+  .trap-card{ box-shadow:none; border:1px solid #000; }
+  .trap-col{ border-color:#000; }
+  .post-card, .post-image .frame, .trap-card{ box-shadow:none; }
+  a[href^="http"]::after{ content:" (" attr(href) ")"; font-size:0.75em; word-break:break-all; }
+}

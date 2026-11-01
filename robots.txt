@@ -1,0 +1,15 @@
+# ============================================================================
+# This file belongs at REPO ROOT as robots.txt.
+# ============================================================================
+
+User-agent: *
+Allow: /
+
+# The post template is a working file, not a page. It lives in the repo so you
+# can copy it, but it is full of {{PLACEHOLDER}} text and should never be
+# indexed. Blocked here rather than with a noindex tag on the file itself: a
+# noindex would be copied into every new post you create from it, and you would
+# silently publish posts Google refuses to index.
+Disallow: /blog/post-template.html
+
+Sitemap: https://mathmadeeasybetty.com/sitemap.xml
