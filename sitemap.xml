@@ -37,17 +37,22 @@
   <!-- blog -->
   <url>
     <loc>https://mathmadeeasybetty.com/blog/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-10-31</lastmod>
   </url>
 
   <url>
     <loc>https://mathmadeeasybetty.com/blog/calculator-negative-square-trap.html</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-10-31</lastmod>
   </url>
 
   <url>
     <loc>https://mathmadeeasybetty.com/blog/pemdas-trap.html</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-10-31</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mathmadeeasybetty.com/blog/invisible-math-rules.html</loc>
+    <lastmod>2026-11-01</lastmod>
   </url>
 
 </urlset>
