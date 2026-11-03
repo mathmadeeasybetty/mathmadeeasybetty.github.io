@@ -270,12 +270,12 @@ nav.links a:hover{ color:var(--navy); }
   background:var(--white); border:1px solid var(--line); border-radius:10px;
   padding:20px 16px; margin:0 0 4px; overflow-x:auto; overflow-y:hidden;
 }
-/* .your-turn details{ border-top:1px solid var(--line); margin-top:16px; padding-top:14px; } */
-/* to move the horizontal divider after the + button in the your turn card */
+/* to move the horizontal divider line after the + button in the your turn card, also added margin-bottom24 */
 .your-turn details{
   border-top:none;
   border-bottom:1px solid var(--line);
   margin-top:16px;
+margin-bottom:24px;
   padding-top:14px;
   padding-bottom:12px;
 }
