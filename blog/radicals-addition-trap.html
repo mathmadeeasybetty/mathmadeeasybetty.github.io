@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Is √(a + b) = √a + √b? Square Roots Explained | MathMadeEasy</title>
+<meta name="description" content="Discover why you can split a square root over multiplication but not addition, and learn how to avoid this common algebra mistake.">
+<meta property="og:title" content="Is √(a + b) = √a + √b? Square Roots Explained | MathMadeEasy">
+<meta property="og:description" content="Discover why you can split a square root over multiplication but not addition, and learn how to avoid this common algebra mistake.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mathmadeeasybetty.com/blog/radicals-addition-trap.html">
+<meta property="og:image" content="https://mathmadeeasybetty.com/blog/images/og-radicals-addition-trap.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Is the square root of a plus b equal to the square root of a plus the square root of b? The square root of 36 plus 64 is 10, not 14">
+<meta property="og:site_name" content="MathMadeEasy">
+<link rel="icon" href="/blog/favicon.ico">
+<link rel="canonical" href="https://mathmadeeasybetty.com/blog/radicals-addition-trap.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Is √(a + b) = √a + √b? Square Roots Explained | MathMadeEasy">
+<meta name="twitter:description" content="Discover why you can split a square root over multiplication but not addition, and learn how to avoid this common algebra mistake.">
+<meta name="twitter:image" content="https://mathmadeeasybetty.com/blog/images/og-radicals-addition-trap.png">
+
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['$', '$']] },
+    svg: { scale: 1.15 }
+  };
+</script>
+<script defer src="/mathjax-local.js" onerror="var s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js';document.head.appendChild(s);"></script>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+  .tri-fig{ max-width:420px; margin:28px auto; padding:0; }
+  .tri-fig .frame{ background:var(--paper,#f6f5f1); border:1px solid var(--line,#e2ddd0); border-radius:12px; padding:14px 10px 6px; }
+  .tri-fig svg{ display:block; width:100%; height:auto; }
+  .tri-fig figcaption{ font-size:1rem; line-height:1.5; color:var(--ink-soft,#4a5b78); margin-top:12px; text-align:center; }
+  .tri-fill{ fill:var(--navy,#0b2f66); fill-opacity:.06; stroke:none; }
+  .tri-leg{ fill:none; stroke:var(--navy,#0b2f66); stroke-width:4; stroke-linecap:round; }
+  .tri-hyp{ fill:none; stroke:var(--gold-deep,#b5502d); stroke-width:5; stroke-linecap:round; }
+  .tri-mark{ fill:none; stroke:var(--ink-soft,#4a5b78); stroke-width:2; }
+  .tri-txt{ font-family:var(--font-body,system-ui,sans-serif); font-size:18px; font-weight:700; fill:var(--ink,#14213d); }
+  .tri-txt.hyp{ fill:var(--gold-deep,#b5502d); }
+  /* narrow phones: keep the checklist formulas inside their column */
+  @media (max-width:360px){
+    .post-body li mjx-container{ display:block; max-width:100%; overflow-x:auto; overflow-y:hidden; font-size:100% !important; }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Is √(a + b) = √a + √b? Why Square Roots Don't Split Over Addition",
+  "description": "Discover why you can split a square root over multiplication but not addition, and learn how to avoid this common algebra mistake.",
+  "image": "https://mathmadeeasybetty.com/blog/images/og-radicals-addition-trap.png",
+  "datePublished": "2026-11-09",
+  "dateModified": "2026-11-09",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "name": "Betty",
+    "url": "https://mathmadeeasybetty.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MathMadeEasy",
+    "url": "https://mathmadeeasybetty.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mathmadeeasybetty.com/og_image.png"
+    }
+  },
+  "isPartOf": { "@id": "https://mathmadeeasybetty.com/blog/#blog" },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mathmadeeasybetty.com/blog/radicals-addition-trap.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">MathMadeEasy Blog</a>
+    <nav class="links">
+      <a href="index.html">All Articles</a>
+      <a href="https://resources.mathmadeeasybetty.com" target="_blank" rel="noopener" class="nav-cta">Shop Workbooks</a>
+    </nav>
+  </div>
+</header>
+
+<article>
+
+  <div class="post-hero">
+    <div class="inner">
+      <span class="eyebrow">Algebra &amp; Radicals</span>
+            <h1>Why Can You Split a Square Root Over Multiplication, but Not Addition?</h1>
+
+      <p class="post-desc">Is &radic;(a + b) Equal to &radic;a + &radic;b? Why Square Roots Don't Split Over Addition</p>
+<p class="post-desc">By the end of this article, you'll understand how to simplify square roots, when you can split a radical, and why multiplication and addition follow different rules.</p>      <div class="post-meta">November 9, 2026</div>
+    </div>
+  </div>
+
+  <div class="post-body" style="padding-top: 32px;">
+
+    <div class="your-turn">
+      <span class="eyebrow">Try it first</span>
+      <p>Are these two expressions equal? Work out both before you read on.</p>
+      <p class="prompt">$\sqrt{9 + 16}$<br>$\sqrt{9} + \sqrt{16}$</p>
+      <details>
+        <summary>Show the answer</summary>
+        <div class="answer">
+          <p>$\sqrt{9 + 16} = \sqrt{25} = 5$, but $\sqrt{9} + \sqrt{16} = 3 + 4 = 7$.</p>
+          <p>They are not equal. If you thought they were, this is one of the most common algebra mistakes, and the rest of this article shows why it happens.</p>
+        </div>
+      </details>
+    </div>
+
+    <p>A square root can be split over multiplication and division. It cannot generally be split over addition or subtraction. We start with the case that fails, because that is where the mistake happens, then look at the case where splitting does work.</p>
+
+    <p>In this article, $a$ and $b$ are positive numbers, so every square root is a real number.</p>
+
+    <h2>01 &middot; Addition: where the split fails</h2>
+    <p>Take $36 + 64$. Add inside the root first:</p>
+    <p class="math-display">$\begin{aligned}\sqrt{36 + 64} &= \sqrt{100} \\ &= 10\end{aligned}$</p>
+    <p>Now compare that with splitting the root before adding:</p>
+
+    <div class="trap-card">
+      <span class="eyebrow">The Trap</span>
+      <h3>Splitting over addition</h3>
+      <div class="trap-row">
+        <div class="trap-col trap-wrong">
+          <span class="trap-label">Common mistake</span>
+          <p>
+            $\sqrt{36 + 64}$<br>
+            $= \sqrt{36} + \sqrt{64}$<br>
+            $= 6 + 8$<br>
+            $= 14$
+          </p>
+        </div>
+        <div class="trap-col trap-right">
+          <span class="trap-label">Correct way</span>
+          <p>
+            $\sqrt{(36 + 64)}$<br>
+            $= \sqrt{100}$<br>
+            $= 10$
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <p>Since $10 \neq 14$, splitting the radical breaks the math:</p>
+    <p class="math-display">$\begin{aligned}\sqrt{a+b} &\neq \sqrt{a}+\sqrt{b} \\[2pt] &\text{in general}\end{aligned}$</p>
+<p>The two sides are equal only in special cases: when $a=0$ or $b=0$. These exceptions do not make splitting a sum a valid general rule.</p>
+
+    <h2>02 &middot; Subtraction fails the same way</h2>
+        <div class="trap-card">
+      <span class="eyebrow">The Trap</span>
+      <h3>Splitting over subtraction</h3>
+      <div class="trap-row">
+        <div class="trap-col trap-wrong">
+          <span class="trap-label">Common mistake</span>
+          <p>
+            $\sqrt{100 - 36}$<br>
+            $= \sqrt{100} - \sqrt{36}$<br>
+            $= 10 - 6$<br>
+            $= 4$
+          </p>
+        </div>
+        <div class="trap-col trap-right">
+          <span class="trap-label">Correct way</span>
+          <p>
+            $\sqrt{(100 - 36)}$<br>
+            $= \sqrt{64}$<br>
+            $= 8$
+          </p>
+        </div>
+      </div>
+    </div>
+   <p>Since $4 \neq 8$, splitting the radical gives an incorrect result:</p>
+
+<p class="math-display">
+  $\begin{aligned}\sqrt{a-b} &\neq \sqrt{a}-\sqrt{b} \\[2pt] &\text{in general}\end{aligned}$
+</p>
+
+<p>The two sides are equal in special cases: when $b=0$ or when $a=b$.</p>
+
+<p>Here we also need $a \geq b$, so the number under the root is not negative.</p>
+
+
+<h2>03 &middot; Where does the extra value come from?</h2>
+
+<p>
+  If splitting over addition were valid, squaring the result would give us back the original number inside the radical: $36 + 64 = 100$.
+</p>
+
+<p class="math-display">
+  $\begin{array}{l}
+  (\sqrt{36} + \sqrt{64})^2 \\[4pt]
+  = (6 + 8)^2 \\[4pt]
+  = 6^2 + 2(6)(8) + 8^2 \\[4pt]
+  = 36 + 96 + 64 \\[4pt]
+  = 196
+  \end{array}$
+</p>
+
+<p>
+  We get $196$, not $100$. The extra $96$ comes from the middle term, $2(6)(8)$, created when we square a sum. This is why we cannot split a square root over addition.
+</p>
+
+<p>
+  Subtraction has the same issue, but the middle term is negative. If we split $\sqrt{100 - 36}$, we get $10 - 6 = 4$. Squaring that result should give us $100 - 36 = 64$, but watch what happens:
+</p>
+
+<p class="math-display">
+  $\begin{array}{l}
+  (\sqrt{100} - \sqrt{36})^2 \\[4pt]
+  = (10 - 6)^2 \\[4pt]
+  = 10^2 - 2(10)(6) + 6^2 \\[4pt]
+  = 100 - 120 + 36 \\[4pt]
+  = 16
+  \end{array}$
+</p>
+
+<p>
+  We get $16$, not $64$. The middle term is now $-120$. So square roots cannot be split over subtraction either.
+</p>
+
+
+    <h2>04 &middot; Multiplication and division: where splitting works</h2>
+          <p>You have seen that sums and differences fail. Now test a product.</p>
+
+    <div class="your-turn">
+      <span class="eyebrow">Try it first</span>
+            <p>Are these two expressions equal? Work out both before you read on.</p>
+
+      <p class="prompt">$\sqrt{4 \times 49}$<br>$\sqrt{4} \times \sqrt{49}$</p>
+      <details>
+        <summary>Show the answer</summary>
+        <div class="answer">
+          <p>$\sqrt{4 \times 49} = \sqrt{196} = 14$ and $\sqrt{4} \times \sqrt{49} = 2 \times 7 = 14$.</p>
+          <p>They match. A product is the case where splitting is safe, and the next section shows it with more examples.</p>
+        </div>
+      </details>
+    </div>
+
+    <p>Let's compare the two ways of working with multiplication.</p>
+
+    <p>First, multiply inside the radical:</p>
+
+    <p class="math-display">
+      $\begin{aligned}
+      \sqrt{9 \times 25} &= \sqrt{225} \\
+      &= 15
+      \end{aligned}$
+    </p>
+
+    <p>Now split the factors and simplify each square root:</p>
+
+    <p class="math-display">
+      $\begin{aligned}
+      \sqrt{9} \times \sqrt{25} &= 3 \times 5 \\
+      &= 15
+      \end{aligned}$
+    </p>
+
+    <p>Both methods give $15$. This time, splitting works:</p>
+
+    <p class="math-display">
+      $\sqrt{a \times b} = \sqrt{a} \times \sqrt{b}$
+    </p>
+
+    <p>Why does it work? Square the split result:</p>
+
+    <p class="math-display">
+      $\begin{aligned}
+      (\sqrt{9} \times \sqrt{25})^2
+      &= 9 \times 25 \\
+      &= 225
+      \end{aligned}$
+    </p>
+
+    <p>We get back the original product, $225$. There is no extra middle term like the one created when squaring a sum or difference.</p>
+
+    <h3>Division works the same way</h3>
+
+    <p>Let's test division using the same approach.</p>
+
+    <p>First, divide inside the radical:</p>
+
+    <p class="math-display">
+      $\begin{aligned}
+      \sqrt{\frac{100}{4}} &= \sqrt{25} \\
+      &= 5
+      \end{aligned}$
+    </p>
+
+    <p>Now split the numerator and denominator:</p>
+
+    <p class="math-display">
+      $\begin{aligned}
+      \frac{\sqrt{100}}{\sqrt{4}} &= \frac{10}{2} \\
+      &= 5
+      \end{aligned}$
+    </p>
+
+    <p>Both methods give $5$. Splitting works here too:</p>
+
+    <p class="math-display">
+      $\sqrt{\frac{a}{b}} = \frac{\sqrt{a}}{\sqrt{b}}$
+    </p>
+
+    <p>Squaring the split result confirms it:</p>
+
+    <p class="math-display">
+      $\begin{aligned}
+      \left(\frac{\sqrt{100}}{\sqrt{4}}\right)^2
+      &= \frac{100}{4} \\
+      &= 25
+      \end{aligned}$
+    </p>
+
+    <p>We get back the original quotient, $25$. Unlike addition and subtraction, splitting over multiplication and division gives us exactly the original value.</p>
+
+
+    <h2>05 &middot; So what do you do instead?</h2>
+
+    <p>When addition or subtraction appears inside a radical, work it out first. Then check whether the resulting number has a perfect-square factor.</p>
+
+    <p>For example, take $\sqrt{9 + 25}$. Add inside first:</p>
+
+    <p class="math-display">
+      $\begin{aligned}
+      \sqrt{9 + 25} &= \sqrt{34}
+      \end{aligned}$
+    </p>
+
+    <p>$34$ has no perfect-square factor greater than $1$, so the radical cannot be simplified further. Leave it as $\sqrt{34}$.</p>
+
+    <p>But sometimes the result does have a perfect-square factor. Look at this example:</p>
+
+    <p class="math-display">
+      $\begin{aligned}
+      \sqrt{16 + 4} &= \sqrt{20} \\
+      &= \sqrt{4 \times 5} \\
+      &= \sqrt{4} \times \sqrt{5} \\
+      &= 2\sqrt{5}
+      \end{aligned}$
+    </p>
+
+    <p>Notice the order: add first, then rewrite $20$ as a product. Now you can split the multiplication and simplify.</p>
+
+    <p><strong>Remember:</strong> You cannot split the original sum, but you can factor the result into a product.</p>
+
+    <p>A picture also helps. In a right triangle with legs $3$ and $4$, the squares of the legs are $9$ and $16$. Walking along both legs covers $3 + 4 = 7$, but the straight path across is $\sqrt{9 + 16} = 5$.</p>
+
+    <figure class="tri-fig">
+      <div class="frame">
+        <svg viewBox="0 0 340 240" role="img" aria-labelledby="tri-t tri-d">
+          <title id="tri-t">Right triangle with legs 3 and 4 and hypotenuse 5</title>
+          <desc id="tri-d">The two legs measure 3 and 4, which are the square roots of 9 and 16. The long side across measures 5, which is the square root of 9 plus 16. Walking along the legs is 7, longer than the straight path of 5.</desc>
+          <polygon class="tri-fill" points="90,30 90,180 290,180"/>
+          <line class="tri-leg" x1="90" y1="30" x2="90" y2="180"/>
+          <line class="tri-leg" x1="90" y1="180" x2="290" y2="180"/>
+          <line class="tri-hyp" x1="90" y1="30" x2="290" y2="180"/>
+          <polyline class="tri-mark" points="90,164 106,164 106,180"/>
+          <text class="tri-txt" x="78" y="112" text-anchor="end">&#8730;9 = 3</text>
+          <text class="tri-txt" x="190" y="212" text-anchor="middle">&#8730;16 = 4</text>
+          <text class="tri-txt hyp" x="200" y="92">&#8730;(9 + 16) = 5</text>
+        </svg>
+      </div>
+      <figcaption>Along both legs: 3 + 4 = 7. Straight across: 5.</figcaption>
+    </figure>
+
+    <p class="math-display">
+$\begin{array}{c}\sqrt{9 + 16} = 5 \\[2pt] \text{but} \\[2pt] \sqrt{9} + \sqrt{16} = 7\end{array}$    </p>
+
+<p>The Triangle Inequality Theorem states that the sum of the lengths of any two sides of a triangle must be greater than the length of the third side. The shortcut across is shorter than the walk along both legs.</p>
+    <div class="your-turn">
+      <span class="eyebrow">Your turn</span>
+      <p>Three quick checks. For each one, decide whether the root can be split before you open the answer.</p>
+
+      <p><strong>A. Can this be split?</strong></p>
+      <p class="prompt">$\sqrt{64 \div 16}$</p>
+      <details>
+        <summary>Show the answer</summary>
+        <div class="answer">
+          <p><strong>Yes</strong>, because it is division. Both ways give the same answer:</p>
+          <p>$\sqrt{64} \div \sqrt{16} = 8 \div 4 = 2$ and $\sqrt{64 \div 16} = \sqrt{4} = 2$</p>
+        </div>
+      </details>
+
+      <p><strong>B. Can this be split?</strong></p>
+      <p class="prompt">$\sqrt{25 + 144}$</p>
+      <details>
+        <summary>Show the answer</summary>
+        <div class="answer">
+          <p><strong>No</strong>, because it is addition. Work inside first:</p>
+          <p>$\sqrt{25 + 144} = \sqrt{169} = 13$</p>
+          <p>Splitting gives $5 + 12 = 17$, which is the trap.</p>
+        </div>
+      </details>
+
+      <p><strong>C. Can this be split?</strong></p>
+      <p class="prompt">$\sqrt{169 - 25}$</p>
+      <details>
+        <summary>Show the answer</summary>
+        <div class="answer">
+          <p><strong>No</strong>, because it is subtraction. Work inside first:</p>
+          <p>$\sqrt{169 - 25} = \sqrt{144} = 12$</p>
+          <p>Splitting gives $13 - 5 = 8$, which is the trap.</p>
+        </div>
+      </details>
+    </div>
+
+<h2>Quick checklist</h2>
+<ol>
+  <li><strong>Addition:</strong> Cannot split.
+    $\sqrt{36 + 64} \neq \sqrt{36} + \sqrt{64}$
+  </li>
+  <li><strong>Subtraction:</strong> Cannot split.
+    $\sqrt{100 - 36} \neq \sqrt{100} - \sqrt{36}$
+  </li>
+  <li><strong>Multiplication:</strong> Can split.
+    $\sqrt{4 \cdot 49} = \sqrt{4} \cdot \sqrt{49}$
+  </li>
+  <li><strong>Division:</strong> Can split.
+    $\sqrt{\dfrac{100}{4}} = \dfrac{\sqrt{100}}{\sqrt{4}}$
+  </li>
+</ol>
+
+<p>The multiplication rule is what makes simplifying radicals possible. Put it into practice with my free <em>Simplifying Radicals Practice Workbook</em>, designed for absolute beginners, with 21 practice problems and a fully worked answer key.</p> 
+ </div>
+
+  <div class="post-cta-wrap">
+    <div class="post-cta">
+      <div class="post-cta-text">
+        <span class="eyebrow on-dark">Free Printable</span>
+        <p>Simplifying Radicals: The Grouping Method</p>
+      </div>
+      <a class="btn btn-gold" href="https://resources.mathmadeeasybetty.com/b/6Osly" target="_blank" rel="noopener">Get the Free Workbook &rarr;</a>
+    </div>
+  </div>
+
+  <div class="related-posts">
+    <h2>Keep Learning</h2>
+    <div class="related-grid">
+      <a href="calculator-negative-square-trap.html">
+        <span class="post-tag">Algebra &amp; Exponent Rules</span>
+        <h3>Why &minus;3<sup>2</sup> is Not 9 (And Why Your Calculator Isn't Broken)</h3>
+      </a>
+      <a href="invisible-math-rules.html">
+        <span class="post-tag">Pre-Algebra &amp; High School Math</span>
+        <h3>10 Invisible Math Rules: 6 Pre-Algebra Essentials + 4 Algebra Rules</h3>
+      </a>
+    </div>
+  </div>
+
+  <div class="author-box">
+    <h4>Written by Betty</h4>
+    <p class="author-bio">
+Math educator and founder of MathMadeEasy. My video lessons have reached over 46,000 learners on youtube. I create step-by-step printable practice workbooks built around one core idea: <em>You learn math by doing math.</em> </p>
+  </div>
+
+</article>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> MathMadeEasy (@mathmadeeasybetty)</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
