@@ -246,7 +246,7 @@ nav.links a:hover{ color:var(--navy); }
 .trap-label::before{
   display:inline-flex; align-items:center; justify-content:center;
   width:18px; height:18px; border-radius:50%; color:#fff;
-  font-size:0.68rem; font-weight:700; margin-right:8px; vertical-align:-4px;
+  font-size:0.68rem; font-weight:700; margin-right:8px; vertical-align:middle;
 }
 .trap-wrong .trap-label{ color:var(--wrong-ink); }
 .trap-right .trap-label{ color:var(--right-ink); }
