@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zero Slope vs. Undefined Slope: What's the Difference? | MathMadeEasy</title>
+<meta name="description" content="Why is a horizontal line's slope zero but a vertical line's undefined? Learn the difference with the slope formula, an interactive explorer, and practice.">
+<meta property="og:title" content="Zero Slope vs. Undefined Slope: What's the Difference? | MathMadeEasy">
+<meta property="og:description" content="Why is a horizontal line's slope zero but a vertical line's undefined? Learn the difference with the slope formula, an interactive explorer, and practice.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mathmadeeasybetty.com/blog/zero-slope-vs-undefined-slope.html">
+<meta property="og:image" content="https://mathmadeeasybetty.com/og_image.png">
+<meta property="og:site_name" content="MathMadeEasy">
+<link rel="icon" href="/blog/favicon.ico">
+<link rel="canonical" href="https://mathmadeeasybetty.com/blog/zero-slope-vs-undefined-slope.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Zero Slope vs. Undefined Slope: What's the Difference? | MathMadeEasy">
+<meta name="twitter:description" content="Why is a horizontal line's slope zero but a vertical line's undefined? Learn the difference with the slope formula, an interactive explorer, and practice.">
+<meta name="twitter:image" content="https://mathmadeeasybetty.com/og_image.png">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['$', '$']] },
+    svg: { scale: 1.15 }
+  };
+</script>
+<script defer src="/mathjax-local.js" onerror="var s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js';document.head.appendChild(s);"></script>
+<link rel="stylesheet" href="style.css">
+<style>
+  .slope-fig{ max-width:420px; margin:28px auto; padding:0; }
+  .slope-fig .frame{ background:var(--paper,#f7f6f2); border:1px solid var(--line,#e5e1d6); border-radius:12px; padding:14px 10px 6px; }
+  .slope-fig svg{ display:block; width:100%; height:auto; }
+  .slope-fig figcaption{ font-size:1rem; line-height:1.5; color:var(--ink-soft,#46577a); margin-top:12px; text-align:center; }
+  .slope-grid{ fill:none; stroke:var(--line,#e5e1d6); stroke-width:1; }
+  .slope-axis{ fill:none; stroke:var(--ink-soft,#46577a); stroke-width:1.8; }
+  .slope-line{ fill:none; stroke:var(--navy,#0b2f66); stroke-width:4; stroke-linecap:round; }
+  .slope-change{ fill:none; stroke:var(--gold-ink,#a8461f); stroke-width:2; stroke-dasharray:5 4; }
+  .slope-point{ fill:var(--gold,#e8a33d); stroke:var(--navy,#0b2f66); stroke-width:1.5; }
+  .slope-txt{ font-family:var(--font-body,system-ui,sans-serif); font-size:16px; font-weight:700; fill:var(--ink,#16233f); }
+  .slope-note{ font-family:var(--font-body,system-ui,sans-serif); font-size:15px; font-weight:700; fill:var(--gold-ink,#a8461f); }
+  .slope-tick{ font-family:var(--font-body,system-ui,sans-serif); font-size:15px; fill:var(--ink-soft,#46577a); }
+  .slope-halo{ paint-order:stroke; stroke:var(--paper,#f7f6f2); stroke-width:4px; stroke-linejoin:round; }
+  .explorer{ background:var(--paper,#f7f6f2); border:1px solid var(--line,#e5e1d6); border-radius:14px; padding:20px 18px; margin:28px 0; }
+  .explorer .eyebrow{ margin-bottom:10px; }
+  .explorer h3{ font-size:1.25rem; color:var(--navy,#0b2f66); margin:0 0 8px; }
+  .explorer p{ font-size:1rem; margin:0 0 16px; }
+  .ex-grid{ display:grid; gap:16px; }
+  .ex-grid svg{ width:100%; max-width:300px; height:auto; margin:0 auto; background:#fff; border:1px solid var(--line,#e5e1d6); border-radius:10px; }
+  .ex-controls label{ display:flex; justify-content:space-between; font-weight:700; font-size:1rem; }
+  .explorer .slope-txt{ font-size:18px; }
+  .ex-controls input[type=range]{ width:100%; height:44px; margin:0 0 12px; accent-color:var(--navy,#0b2f66); }
+  .ex-out{ display:block; background:#fff; border:1px solid var(--line,#e5e1d6); border-left:4px solid var(--gold,#e8a33d); border-radius:10px; padding:12px 14px; font-size:1.02rem; line-height:1.5; min-height:5.2em; }
+  .ex-out b{ display:block; color:var(--navy,#0b2f66); }
+  @media (min-width:640px){ .ex-grid{ grid-template-columns:300px 1fr; align-items:center; } }
+  @media (max-width:360px){
+    .post-body li mjx-container{ display:block; max-width:100%; overflow-x:auto; overflow-y:hidden; font-size:100% !important; }
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Zero Slope vs. Undefined Slope: What's the Difference?",
+  "description": "Why is a horizontal line's slope zero but a vertical line's undefined? Learn the difference with the slope formula, an interactive explorer, and practice.",
+  "image": "https://mathmadeeasybetty.com/og_image.png",
+  "datePublished": "2026-11-21",
+  "dateModified": "2026-11-21",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "name": "Betty",
+    "url": "https://mathmadeeasybetty.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MathMadeEasy",
+    "url": "https://mathmadeeasybetty.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mathmadeeasybetty.com/og_image.png"
+    }
+  },
+  "isPartOf": { "@id": "https://mathmadeeasybetty.com/blog/#blog" },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mathmadeeasybetty.com/blog/zero-slope-vs-undefined-slope.html"
+  }
+}
+</script>
+</head>
+<body>
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">MathMadeEasy Blog</a>
+    <nav class="links">
+      <a href="index.html">All Articles</a>
+      <a href="https://resources.mathmadeeasybetty.com" target="_blank" rel="noopener" class="nav-cta">Shop Workbooks</a>
+    </nav>
+  </div>
+</header>
+
+<article>
+  <div class="post-hero">
+    <div class="inner">
+      <span class="eyebrow">Algebra &amp; Graphs</span>
+      <h1>Zero Slope vs. Undefined Slope: What's the Difference?</h1>
+      <p class="post-desc">A horizontal line has zero slope. A vertical line has undefined slope. The difference comes down to one question: where is the zero in the slope formula?</p>
+      <div class="post-meta">November 21, 2026</div>
+    </div>
+  </div>
+
+  <div class="post-body" style="padding-top: 32px;">
+    <div class="your-turn">
+      <span class="eyebrow">Try it first</span>
+      <p>Evaluate these three fractions. Which one equals zero? Which ones are undefined?</p>
+      <p class="prompt">$\dfrac{0}{5}\qquad \dfrac{5}{0}\qquad \dfrac{0}{0}$</p>
+      <details>
+        <summary>Show the answer</summary>
+        <div class="answer">
+          <p>$\dfrac{0}{5}=0$</p>
+          <p>$\dfrac{5}{0}$ is undefined, and $\dfrac{0}{0}$ is also undefined.</p>
+          <p>Zero in the numerator is not the same as zero in the denominator. The third fraction needs a closer look, too.</p>
+        </div>
+      </details>
+    </div>
+
+    <p>These three fractions explain the difference between zero slope and undefined slope. Many students memorize that horizontal lines have zero slope and vertical lines have undefined slope, but never learn why. The reason is where the zero sits in the fraction: on top or on the bottom.</p>
+
+    <h2>01 &middot; What slope tells you</h2>
+    <p>Slope measures how steep a line is and which way it leans. Read a graph from <strong>left to right</strong>, the way you read a sentence. If the line climbs, the slope is positive. If it drops, the slope is negative.</p>
+    <figure class="slope-fig">
+      <div class="frame">
+        <svg viewBox="0 0 280 250" role="img" aria-labelledby="fr-t fr-d">
+          <title id="fr-t">The four kinds of slope</title>
+          <desc id="fr-d">Four small graphs read left to right: a rising line with positive slope, a falling line with negative slope, a flat line with zero slope, and a vertical line with undefined slope.</desc>
+          <rect x="6" y="6" width="132" height="112" rx="10" fill="#fff" stroke="#e2ddd0"/><path class="slope-line" d="M36 62L96 26"/><text class="slope-txt" x="72" y="90" text-anchor="middle">Positive</text><text class="slope-txt" x="72" y="109" text-anchor="middle" style="font-weight:400">rises</text><rect x="142" y="6" width="132" height="112" rx="10" fill="#fff" stroke="#e2ddd0"/><path class="slope-line" d="M178 26L238 62"/><text class="slope-txt" x="208" y="90" text-anchor="middle">Negative</text><text class="slope-txt" x="208" y="109" text-anchor="middle" style="font-weight:400">falls</text><rect x="6" y="132" width="132" height="112" rx="10" fill="#fff" stroke="#e2ddd0"/><path class="slope-line" d="M36 168H102"/><text class="slope-txt" x="72" y="216" text-anchor="middle">Zero</text><text class="slope-txt" x="72" y="235" text-anchor="middle" style="font-weight:400">flat</text><rect x="142" y="132" width="132" height="112" rx="10" fill="#fff" stroke="#e2ddd0"/><path class="slope-line" d="M208 150V196"/><text class="slope-txt" x="208" y="216" text-anchor="middle">Undefined</text><text class="slope-txt" x="208" y="235" text-anchor="middle" style="font-weight:400">vertical</text>
+        </svg>
+      </div>
+      <figcaption>Read every line from left to right.</figcaption>
+    </figure>
+    <p>The sign gives the direction and the size gives the steepness. A slope of $3$ climbs faster than a slope of $\tfrac{1}{2}$, and $-3$ drops faster than $-\tfrac{1}{2}$.</p>
+    <p>Positive and negative slopes are easy to see. The last two pictures, flat and vertical, are where students mix things up. That is the focus of this guide.</p>
+
+    <h2>02 &middot; Start with the slope formula</h2>
+    <p>Slope compares the vertical change with the horizontal change between two points. It is often called <strong>rise over run</strong>.</p>
+    <p class="math-display">$\displaystyle m=\frac{y_2-y_1}{x_2-x_1}=\frac{\text{rise}}{\text{run}}$</p>
+    <p>The numerator, $y_2-y_1$, measures the change in $y$ (the rise). The denominator, $x_2-x_1$, measures the change in $x$ (the run).</p>
+    <p>Notice the order: <strong>vertical change divided by horizontal change.</strong> The subtraction order must also match in the numerator and denominator.</p>
+    <p><strong>Example 1: a rising line.</strong> Use $(1,2)$ and $(4,8)$.</p>
+    <p class="math-display">$\displaystyle m=\frac{8-2}{4-1}=\frac{6}{3}=2$</p>
+    <p>The slope is positive: the line climbs $2$ units for every $1$ unit to the right.</p>
+    <p><strong>Example 2: a falling line.</strong> Use $(-1,5)$ and $(3,1)$.</p>
+    <p class="math-display">$\displaystyle m=\frac{1-5}{3-(-1)}=\frac{-4}{4}=-1$</p>
+    <p>The slope is negative: the line drops $1$ unit for every $1$ unit to the right.</p>
+<p><strong>Order check.</strong> It does not matter which point you call $(x_1,y_1)$ and which you call $(x_2,y_2)$, as long as you use the same order on top and on the bottom. In Example 1, starting from $(4,8)$ instead of $(1,2)$ gives $\dfrac{2-8}{1-4}=\dfrac{-6}{-3}=2$, the same answer. Mixing the order, as in $\dfrac{8-2}{1-4}$, gives $-2$, which is wrong.</p>
+
+    <h2>03 &middot; Zero slope: a horizontal line</h2>
+    <p>A horizontal line does not go up or down. Its two points have the same $y$-coordinate, so the rise is zero. But the points have different $x$-coordinates, so the run is not zero.</p>
+    <figure class="slope-fig">
+      <div class="frame">
+        <svg viewBox="0 0 320 250" role="img" aria-labelledby="hz-t hz-d">
+          <title id="hz-t">A horizontal line has zero slope</title>
+          <desc id="hz-d">A horizontal line passes through the points (1, 2) and (5, 2). The rise is zero and the run is four.</desc>
+          <g class="slope-grid"><path d="M46 26V224 M82 26V224 M118 26V224 M154 26V224 M190 26V224 M226 26V224 M262 26V224 M46 224H280 M46 188H280 M46 152H280 M46 116H280 M46 80H280 M46 44H280"/></g><path class="slope-axis" d="M34 224H292 M46 236V14"/><text class="slope-tick" x="82" y="241" text-anchor="middle">1</text><text class="slope-tick" x="118" y="241" text-anchor="middle">2</text><text class="slope-tick" x="154" y="241" text-anchor="middle">3</text><text class="slope-tick" x="190" y="241" text-anchor="middle">4</text><text class="slope-tick" x="226" y="241" text-anchor="middle">5</text><text class="slope-tick" x="262" y="241" text-anchor="middle">6</text><text class="slope-tick" x="38" y="192" text-anchor="end">1</text><text class="slope-tick" x="38" y="156" text-anchor="end">2</text><text class="slope-tick" x="38" y="120" text-anchor="end">3</text><text class="slope-tick" x="38" y="84" text-anchor="end">4</text><text class="slope-tick" x="38" y="48" text-anchor="end">5</text><text class="slope-tick" x="290" y="216">x</text><text class="slope-tick" x="54" y="22">y</text>
+          <path class="slope-line" d="M60 152H248"/><circle class="slope-point" cx="82" cy="152" r="5"/><circle class="slope-point" cx="226" cy="152" r="5"/><path class="slope-change" d="M82 188H226 M82 182V194 M226 182V194"/><text class="slope-txt" x="82" y="138" text-anchor="middle">(1, 2)</text><text class="slope-txt" x="226" y="138" text-anchor="middle">(5, 2)</text><text class="slope-note" x="154" y="138" text-anchor="middle">Rise = 0</text><text class="slope-note" x="154" y="208" text-anchor="middle">Run = 4</text>
+        </svg>
+      </div>
+      <figcaption><strong>Horizontal line:</strong> zero rise, nonzero run.</figcaption>
+    </figure>
+    <p>Use the points $(1,2)$ and $(5,2)$:</p>
+    <p class="math-display">
+      $\begin{aligned}
+      m&=\frac{y_2-y_1}{x_2-x_1}\\[4pt]
+       &=\frac{2-2}{5-1}\\[4pt]
+       &=\frac{0}{4}\\[4pt]
+       &=0
+      \end{aligned}$
+    </p>
+    <p>The denominator is nonzero, so the fraction is defined. Zero divided by a nonzero number equals zero.</p>
+    <p><strong>A horizontal line has a slope of zero.</strong> Zero is the actual value of its slope; it does not mean the slope is missing.</p>
+    <p><strong>Real-life picture: a level hallway.</strong> Imagine walking straight along a perfectly level hallway. Your horizontal position changes, but your height stays the same. That is zero rise and a nonzero run, so the slope is zero.</p>
+
+    <h2>04 &middot; Undefined slope: a vertical line</h2>
+    <p>A vertical line does not move left or right. Its two points have the same $x$-coordinate, so the run is zero. The points have different $y$-coordinates, so the rise is nonzero.</p>
+    <figure class="slope-fig">
+      <div class="frame">
+        <svg viewBox="0 0 320 250" role="img" aria-labelledby="vt-t vt-d">
+          <title id="vt-t">A vertical line has undefined slope</title>
+          <desc id="vt-d">A vertical line passes through the points (3, 1) and (3, 5). The rise is four and the run is zero.</desc>
+          <g class="slope-grid"><path d="M46 26V224 M82 26V224 M118 26V224 M154 26V224 M190 26V224 M226 26V224 M262 26V224 M46 224H280 M46 188H280 M46 152H280 M46 116H280 M46 80H280 M46 44H280"/></g><path class="slope-axis" d="M34 224H292 M46 236V14"/><text class="slope-tick" x="82" y="241" text-anchor="middle">1</text><text class="slope-tick" x="118" y="241" text-anchor="middle">2</text><text class="slope-tick" x="154" y="241" text-anchor="middle">3</text><text class="slope-tick" x="190" y="241" text-anchor="middle">4</text><text class="slope-tick" x="226" y="241" text-anchor="middle">5</text><text class="slope-tick" x="262" y="241" text-anchor="middle">6</text><text class="slope-tick" x="38" y="192" text-anchor="end">1</text><text class="slope-tick" x="38" y="156" text-anchor="end">2</text><text class="slope-tick" x="38" y="120" text-anchor="end">3</text><text class="slope-tick" x="38" y="84" text-anchor="end">4</text><text class="slope-tick" x="38" y="48" text-anchor="end">5</text><text class="slope-tick" x="290" y="216">x</text><text class="slope-tick" x="54" y="22">y</text>
+          <path class="slope-line" d="M154 206V26"/><circle class="slope-point" cx="154" cy="188" r="5"/><circle class="slope-point" cx="154" cy="44" r="5"/><path class="slope-change" d="M236 44V188 M230 44H242 M230 188H242"/><text class="slope-txt" x="164" y="40">(3, 5)</text><text class="slope-txt" x="164" y="198">(3, 1)</text><text class="slope-note" x="246" y="120">Rise = 4</text><text class="slope-note slope-halo" x="146" y="120" text-anchor="end">Run = 0</text>
+        </svg>
+      </div>
+      <figcaption><strong>Vertical line:</strong> nonzero rise, zero run.</figcaption>
+    </figure>
+    <p>Use the points $(3,1)$ and $(3,5)$:</p>
+    <p class="math-display">
+      $\begin{aligned}
+      m&=\frac{y_2-y_1}{x_2-x_1}\\[4pt]
+       &=\frac{5-1}{3-3}\\[4pt]
+       &=\frac{4}{0}
+      \end{aligned}$
+    </p>
+    <p>Division by zero is undefined. There is no number you can multiply by zero to get $4$.</p>
+    <p><strong>A vertical line has an undefined slope.</strong> It is not zero. The exact mathematical answer is <em>undefined</em>, not infinity.</p>
+
+    <p><strong>Real-life picture: an elevator.</strong> Imagine an elevator moving straight up inside a vertical shaft. Let $x$ represent its horizontal position and $y$ represent its height. The elevator stays 4 meters from a chosen horizontal reference, while its height changes from 2 meters to 12 meters. Its positions are $(4,2)$ and $(4,12)$.</p>
+    <p>The elevator rises 10 meters, but its horizontal position does not change:</p>
+    <p class="math-display">$\displaystyle m=\frac{10}{0}$</p>
+    <p>Because division by zero is undefined, the elevator's slope is undefined.</p>
+    <p>Why can't this quotient be a number? Suppose its slope were some real number $m$. The relationship between rise and run would require:</p>
+    <p class="math-display">$10=m\times 0$</p>
+    <p>But every real number multiplied by zero equals zero, never 10. No real number can satisfy this equation. That is what <strong>undefined slope</strong> means here: there is no real-number value for the rise-per-run ratio when the run is zero.</p>
+    <p>A vertical line is not assigned an infinite slope. Slopes can become very large in magnitude as a line gets closer to vertical, but the slope of the exact vertical line is undefined.</p>
+
+    <div class="trap-card">
+      <span class="eyebrow">The Trap</span>
+      <h3>Switching zero slope and undefined slope</h3>
+      <div class="trap-row">
+        <div class="trap-col trap-wrong">
+          <span class="trap-label">Common mistake</span>
+          <p>
+            Horizontal line: no rise, so slope is undefined.<br><br>
+            Vertical line: no run, so slope is zero.
+          </p>
+        </div>
+        <div class="trap-col trap-right">
+          <span class="trap-label">Correct reasoning</span>
+          <p>
+            Horizontal: $\dfrac{0}{4}=0$.<br><br>
+            Vertical: $\dfrac{4}{0}$ is undefined.
+          </p>
+        </div>
+      </div>
+    </div>
+    <p>The mistake comes from noticing that one change is zero but not checking whether it is the numerator or the denominator.</p>
+
+    <h2>Test it yourself</h2>
+    <p>Everything so far comes down to one fraction. Use the sliders to see how the rise and the run change it.</p>
+    <section class="explorer" id="explorer" hidden aria-labelledby="ex-h">
+      <span class="eyebrow">Interactive</span>
+      <h3 id="ex-h">Build a line, then read its slope</h3>
+      <p>Point A is fixed. The sliders move point B. Try to find the three special cases: a flat line, a vertical line, and the same point twice.</p>
+      <div class="ex-grid">
+        <svg id="ex-svg" viewBox="0 0 300 300" role="img" aria-label="A line through point A and point B on a grid">
+          <defs><clipPath id="ex-clip"><rect x="18" y="18" width="264" height="264"/></clipPath></defs>
+          <g class="slope-grid"><path d="M18 18V282 M18 18H282 M40 18V282 M18 40H282 M62 18V282 M18 62H282 M84 18V282 M18 84H282 M106 18V282 M18 106H282 M128 18V282 M18 128H282 M150 18V282 M18 150H282 M172 18V282 M18 172H282 M194 18V282 M18 194H282 M216 18V282 M18 216H282 M238 18V282 M18 238H282 M260 18V282 M18 260H282 M282 18V282 M18 282H282"/></g>
+          <path class="slope-axis" d="M18 150H282 M150 18V282"/>
+          <g clip-path="url(#ex-clip)"><line id="ex-line" class="slope-line" x1="0" y1="0" x2="0" y2="0"/></g>
+          <polyline id="ex-ch" class="slope-change" points=""/>
+          <circle id="ex-a" class="slope-point" r="6" cx="128" cy="172"/>
+          <circle id="ex-b" class="slope-point" r="6" cx="216" cy="128"/>
+          <text class="slope-txt" id="ex-al" x="112" y="190">A</text>
+          <text class="slope-txt" id="ex-bl" x="224" y="124">B</text>
+        </svg>
+        <div class="ex-controls">
+          <label for="ex-rise"><span>Rise (change in y)</span><b id="ex-rise-v">2</b></label>
+          <input type="range" id="ex-rise" min="-4" max="4" step="1" value="2">
+          <label for="ex-run"><span>Run (change in x)</span><b id="ex-run-v">4</b></label>
+          <input type="range" id="ex-run" min="-4" max="4" step="1" value="4">
+          <output id="ex-out" class="ex-out" for="ex-rise ex-run" aria-live="polite"></output>
+        </div>
+      </div>
+    </section>
+    
+    <h2>05 &middot; Why is $\dfrac{0}{0}$ different?</h2>
+    <p>What happens if you use the same point twice, such as $(2,5)$ and $(2,5)$?</p>
+    <p class="math-display">$m=\dfrac{5-5}{2-2}=\dfrac{0}{0}$</p>
+    <p>This does not give a slope. You have used one point twice, not two distinct points that determine a line. Many different lines can pass through a single point, so one point alone does not determine a unique slope.</p>
+    <p>There is also a way to see why the three fractions behave differently. Division asks: <strong>what number multiplied by the denominator gives the numerator?</strong></p>
+    <p class="math-display">
+      $\begin{aligned}
+      5q=0 &\implies q=0 \\[6pt]
+      0q=5 &\implies \text{no solution} \\[6pt]
+      0q=0 &\implies \text{every }q\text{ works}
+      \end{aligned}$
+    </p>
+    <p>For $\dfrac{0}{5}$, there is one answer: zero. For $\dfrac{5}{0}$, there is no answer. For $\dfrac{0}{0}$, there is no single answer because every number would work. That is why $\dfrac{0}{0}$ is not equal to zero.</p>
+
+    <h2>06 &middot; Keep the three cases separate</h2>
+    <p>Use the numerator and denominator to identify what the slope formula gives you:</p>
+    <ol>
+      <li><strong>Zero numerator, nonzero denominator:</strong> the slope is zero. The line is horizontal. $\dfrac{0}{4}=0$</li>
+      <li><strong>Nonzero numerator, zero denominator:</strong> the slope is undefined. The line is vertical. $\dfrac{4}{0}$ is undefined.</li>
+      <li><strong>Both numerator and denominator are zero:</strong> the slope cannot be determined from the same point repeated. $\dfrac{0}{0}$ is undefined.</li>
+    </ol>
+
+   <h2>Practice: zero, undefined, or not enough information?</h2>
+    <p>Find each slope. Decide what the result means before opening the solution.</p>
+    <div class="your-turn">
+      <span class="eyebrow">Find the slope</span>
+      <p><strong>A.</strong> A line passes through $(-2,4)$ and $(3,4)$.</p>
+      <p class="prompt">$m=\dfrac{?}{?}$</p>
+      <details>
+        <summary>Show the solution</summary>
+        <div class="answer">
+          <p>The $y$-coordinates are equal, so the rise is zero:</p>
+          <p class="math-display">$\displaystyle m=\frac{4-4}{3-(-2)}=\frac{0}{5}=0$</p>
+          <p><strong>The slope is zero.</strong> The line is horizontal.</p>
+        </div>
+      </details>
+      <p><strong>B.</strong> A line passes through $(4,-1)$ and $(4,6)$.</p>
+      <p class="prompt">$m=\dfrac{?}{?}$</p>
+      <details>
+        <summary>Show the solution</summary>
+        <div class="answer">
+          <p>The $x$-coordinates are equal, so the run is zero:</p>
+          <p class="math-display">$\displaystyle m=\frac{6-(-1)}{4-4}=\frac{7}{0}$</p>
+          <p><strong>The slope is undefined.</strong> The line is vertical.</p>
+        </div>
+      </details>
+    </div>
+    <div class="your-turn">
+      <span class="eyebrow">Explain the difference</span>
+      <p><strong>C.</strong> A student says, "A horizontal line has no rise, so its slope is undefined." What is the error?</p>
+      <details>
+        <summary>Show the solution</summary>
+        <div class="answer">
+          <p>The student is confusing a zero numerator with a zero denominator. A horizontal line has zero rise but a nonzero run, so its slope is $\dfrac{0}{\text{nonzero}}=0$.</p>
+        </div>
+      </details>
+      <p><strong>D.</strong> Can you find the slope using the point $(2,5)$ twice?</p>
+      <details>
+        <summary>Show the solution</summary>
+        <div class="answer">
+          <p>No. Repeating the same point gives $\dfrac{0}{0}$. One point does not determine a unique line, so there is not enough information to find a slope.</p>
+        </div>
+      </details>
+      <p><strong>E.</strong> A student finds the slope through $(1,2)$ and $(4,8)$ and writes $m=\dfrac{8-2}{1-4}=-2$. What went wrong? What is the correct slope?</p>
+      <details>
+        <summary>Show the solution</summary>
+        <div class="answer">
+          <p>The top starts with $(4,8)$, but the bottom starts with $(1,2)$. Both must use the same order.</p>
+          <p class="math-display">$\displaystyle m=\frac{8-2}{4-1}=\frac{6}{3}=2$</p>
+          <p><strong>The correct slope is $2$.</strong> Sign check: the line goes up from $(1,2)$ to $(4,8)$, so the slope must be positive.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="your-turn">
+      <span class="eyebrow">Mixed practice</span>
+      <p><strong>F.</strong> A line passes through $(5,3)$ and $(1,7)$. Find the slope. Does the line rise or fall?</p>
+      <details>
+        <summary>Show the solution</summary>
+        <div class="answer">
+          <p class="math-display">$\displaystyle m=\frac{7-3}{1-5}=\frac{4}{-4}=-1$</p>
+          <p><strong>The slope is $-1$.</strong> It is negative, so the line falls from left to right.</p>
+        </div>
+      </details>
+      <p><strong>G.</strong> What is the slope of the line $y=7$? What is the slope of the line $x=-2$?</p>
+      <details>
+        <summary>Show the solution</summary>
+        <div class="answer">
+          <p>Every point on $y=7$ has height $7$. Take $(0,7)$ and $(3,7)$: $\dfrac{7-7}{3-0}=0$. <strong>The slope is zero.</strong></p>
+          <p>Every point on $x=-2$ has $x$-coordinate $-2$. Take $(-2,1)$ and $(-2,4)$: $\dfrac{4-1}{-2-(-2)}=\dfrac{3}{0}$. <strong>The slope is undefined.</strong></p>
+        </div>
+      </details>
+    </div>
+    <h2>Quick checklist</h2>
+<ol>
+  <li><strong>Horizontal line:</strong> zero rise and nonzero run. Slope = $0$.</li>
+  <li><strong>Vertical line:</strong> nonzero rise and zero run. Slope = undefined.</li>
+  <li><strong>Same point twice:</strong> zero rise and zero run. The slope cannot be determined.</li>
+  <li><strong>Equation $y=c$:</strong> a horizontal line. Slope = $0$.</li>
+  <li><strong>Equation $x=c$:</strong> a vertical line. Slope = undefined.</li>
+</ol>
+    <p><strong>Remember: Zero is defined; division by zero is not. In the slope formula, where zero appears matters!</strong></p>
+  </div>
+
+  <div class="related-posts">
+    <h2>Keep Learning</h2>
+    <div class="related-grid">
+      <a href="linear-inequalities-profit-trap.html">
+        <span class="post-tag">Linear Inequalities</span>
+        <h3>Over What Interval Is Store A's Profit Greater Than Store B's?</h3>
+      </a>
+      <a href="cancel-terms-in-a-fraction.html">
+        <span class="post-tag">Algebra Traps</span>
+        <h3>Can You Cancel x in (x + 3)/(x + 4)? When Canceling Terms Actually Works</h3>
+      </a>
+    </div>
+  </div>
+  <div class="author-box">
+    <h4>Written by Betty</h4>
+    <p class="author-bio">
+      Electrical engineer, math educator, and founder of MathMadeEasy. I create step-by-step printable practice workbooks and teach one core idea: you learn math by doing math.
+    </p>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> MathMadeEasy (@mathmadeeasybetty)</span>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var box=document.getElementById('explorer'); if(!box) return;
+  var $=function(id){return document.getElementById(id);};
+  var rise=$('ex-rise'), run=$('ex-run'), U=22, C=150, AX=-1, AY=-1;
+  var X=function(v){return C+U*v;}, Y=function(v){return C-U*v;};
+  var neg=function(s){return String(s).replace('-','\u2212');};
+  function draw(){
+    var dy=+rise.value, dx=+run.value, bx=AX+dx, by=AY+dy, ln=$('ex-line'), label, text;
+    $('ex-rise-v').textContent=neg(dy); $('ex-run-v').textContent=neg(dx);
+    $('ex-a').setAttribute('cx',X(AX)); $('ex-a').setAttribute('cy',Y(AY));
+    $('ex-b').setAttribute('cx',X(bx)); $('ex-b').setAttribute('cy',Y(by));
+    $('ex-al').setAttribute('x',X(AX)-16); $('ex-al').setAttribute('y',Y(AY)+18);
+    $('ex-bl').setAttribute('x',X(bx)+10); $('ex-bl').setAttribute('y',Y(by)-10);
+    $('ex-bl').setAttribute('visibility',(dx||dy)?'visible':'hidden');
+    $('ex-ch').setAttribute('points',X(AX)+','+Y(AY)+' '+X(bx)+','+Y(AY)+' '+X(bx)+','+Y(by));
+    if(!dx && !dy){ ln.setAttribute('visibility','hidden'); }
+    else{
+      ln.setAttribute('visibility','visible');
+      if(!dx){ ln.setAttribute('x1',X(AX)); ln.setAttribute('x2',X(AX)); ln.setAttribute('y1',Y(-6)); ln.setAttribute('y2',Y(6)); }
+      else{ var m=dy/dx; ln.setAttribute('x1',X(-6)); ln.setAttribute('x2',X(6)); ln.setAttribute('y1',Y(AY+m*(-6-AX))); ln.setAttribute('y2',Y(AY+m*(6-AX))); }
+    }
+    if(!dx && !dy){ label='Not a line'; text='m = 0 \u00f7 0. This is the same point twice, so there is no slope to find.'; }
+    else if(!dx){ label='Undefined slope'; text='m = '+neg(dy)+' \u00f7 0. Division by zero is undefined. The line is vertical.'; }
+    else if(!dy){ label='Zero slope'; text='m = 0 \u00f7 '+neg(dx)+' = 0. The line is horizontal.'; }
+    else{
+      var v=parseFloat((dy/dx).toFixed(2));
+      label=v>0?'Positive slope':'Negative slope';
+      text='m = '+neg(dy)+' \u00f7 '+neg(dx)+' = '+neg(v)+'. The line '+(v>0?'rises':'falls')+' from left to right.';
+    }
+    $('ex-out').innerHTML='<b>'+label+'</b>'+text;
+    $('ex-svg').setAttribute('aria-label','Line through point A and point B: '+label.toLowerCase()+'.');
+  }
+  rise.addEventListener('input',draw); run.addEventListener('input',draw);
+  box.hidden=false; draw();
+})();
+</script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
